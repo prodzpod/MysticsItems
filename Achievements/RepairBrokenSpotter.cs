@@ -5,7 +5,7 @@ namespace MysticsItems.Achievements
 {
     public class RepairBrokenSpotter
     {
-		[RegisterAchievement("MysticsItems_RepairBrokenSpotter", "Items.MysticsItems_Spotter", null, typeof(Server))]
+		[RegisterAchievement("MysticsItems_RepairBrokenSpotter", "Items.MysticsItems_Spotter", null, 3, typeof(Server))]
 		public class Tracker : BaseAchievement
 		{
 			public override void OnInstall()

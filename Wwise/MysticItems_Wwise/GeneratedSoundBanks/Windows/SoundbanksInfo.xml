@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{AB9F0343-CD85-AB9E-58D8-B63D74A50185}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
+		</SoundBank>
+		<SoundBank Id="3216743043" Type="User" Language="SFX" Hash="{4D74BD34-3B0B-EE93-6EE4-98CC4E307008}">
+			<ShortName>MysticsItems</ShortName>
+			<Path>MysticsItems.bnk</Path>
+			<Media>
+				<File Id="10955465" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>45.wem.wav</ShortName>
+					<CachePath>SFX/45.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="23409801" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>13.wem.wav</ShortName>
+					<CachePath>SFX/13.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="70276486" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>37.wem.wav</ShortName>
+					<CachePath>SFX/37.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="96348864" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>20.wem.wav</ShortName>
+					<CachePath>SFX/20.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="96889460" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>51.wem.wav</ShortName>
+					<CachePath>SFX/51.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="120459292" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>27.wem.wav</ShortName>
+					<CachePath>SFX/27.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="122444054" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>06.wem.wav</ShortName>
+					<CachePath>SFX/06.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="131990365" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>19.wem.wav</ShortName>
+					<CachePath>SFX/19.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="154485861" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>50.wem.wav</ShortName>
+					<CachePath>SFX/50.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="175414132" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>09.wem.wav</ShortName>
+					<CachePath>SFX/09.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="177207440" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>47.wem.wav</ShortName>
+					<CachePath>SFX/47.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="183431664" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>17.wem.wav</ShortName>
+					<CachePath>SFX/17.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="228223022" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>35.wem.wav</ShortName>
+					<CachePath>SFX/35.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="231387834" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>23.wem.wav</ShortName>
+					<CachePath>SFX/23.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="239139982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>16.wem.wav</ShortName>
+					<CachePath>SFX/16.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="280497527" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>36.wem.wav</ShortName>
+					<CachePath>SFX/36.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="324785963" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>28.wem.wav</ShortName>
+					<CachePath>SFX/28.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="326188006" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>02.wem.wav</ShortName>
+					<CachePath>SFX/02.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="371610572" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>04.wem.wav</ShortName>
+					<CachePath>SFX/04.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="374013065" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>12.wem.wav</ShortName>
+					<CachePath>SFX/12.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="376793136" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>40.wem.wav</ShortName>
+					<CachePath>SFX/40.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="405783540" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>25.wem.wav</ShortName>
+					<CachePath>SFX/25.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="426134208" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>39.wem.wav</ShortName>
+					<CachePath>SFX/39.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="435304172" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>41.wem.wav</ShortName>
+					<CachePath>SFX/41.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="437684689" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>32.wem.wav</ShortName>
+					<CachePath>SFX/32.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="456590317" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>44.wem.wav</ShortName>
+					<CachePath>SFX/44.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="495600733" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>21.wem.wav</ShortName>
+					<CachePath>SFX/21.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="534491431" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>26.wem.wav</ShortName>
+					<CachePath>SFX/26.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="561359430" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>14.wem.wav</ShortName>
+					<CachePath>SFX/14.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="562898796" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>22.wem.wav</ShortName>
+					<CachePath>SFX/22.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="573243926" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>11.wem.wav</ShortName>
+					<CachePath>SFX/11.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="646009852" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>33.wem.wav</ShortName>
+					<CachePath>SFX/33.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="646401957" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>52.wem.wav</ShortName>
+					<CachePath>SFX/52.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="661476053" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>08.wem.wav</ShortName>
+					<CachePath>SFX/08.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="722490220" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>31.wem.wav</ShortName>
+					<CachePath>SFX/31.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="742534235" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>42.wem.wav</ShortName>
+					<CachePath>SFX/42.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="787382395" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>01.wem.wav</ShortName>
+					<CachePath>SFX/01.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="790278177" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>38.wem.wav</ShortName>
+					<CachePath>SFX/38.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="807585537" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>07.wem.wav</ShortName>
+					<CachePath>SFX/07.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="824142622" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>49.wem.wav</ShortName>
+					<CachePath>SFX/49.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="849440867" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>10.wem.wav</ShortName>
+					<CachePath>SFX/10.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="850619821" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>34.wem.wav</ShortName>
+					<CachePath>SFX/34.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="872260772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>24.wem.wav</ShortName>
+					<CachePath>SFX/24.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="878160346" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>43.wem.wav</ShortName>
+					<CachePath>SFX/43.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="922498714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>05.wem.wav</ShortName>
+					<CachePath>SFX/05.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="948435148" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>03.wem.wav</ShortName>
+					<CachePath>SFX/03.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="967597238" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>29.wem.wav</ShortName>
+					<CachePath>SFX/29.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1012860278" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>15.wem.wav</ShortName>
+					<CachePath>SFX/15.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1027297962" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>18.wem.wav</ShortName>
+					<CachePath>SFX/18.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1027651033" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>30.wem.wav</ShortName>
+					<CachePath>SFX/30.wem_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1073689216" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>46.wem.wav</ShortName>
+					<CachePath>SFX/46.wem_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1035564147" Name="MysticsItems_Play_env_OmarHackTool">
+					<MediaRefs>
+						<MediaRef Id="324785963"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="323928108" Name="MysticsItems_Play_env_sirenpole">
+					<MediaRefs>
+						<MediaRef Id="23409801"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4234893182" Name="MysticsItems_Play_env_treasuremap">
+					<MediaRefs>
+						<MediaRef Id="228223022"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="660797122" Name="MysticsItems_Play_fallenStar_collect">
+					<MediaRefs>
+						<MediaRef Id="122444054"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="287601568" Name="MysticsItems_Play_item_proc_blender">
+					<MediaRefs>
+						<MediaRef Id="437684689"/>
+						<MediaRef Id="495600733"/>
+						<MediaRef Id="742534235"/>
+						<MediaRef Id="967597238"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1796747965" Name="MysticsItems_Play_item_proc_creditcard">
+					<MediaRefs>
+						<MediaRef Id="231387834"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="867628484" Name="MysticsItems_Play_item_proc_droneWires">
+					<MediaRefs>
+						<MediaRef Id="96889460"/>
+						<MediaRef Id="120459292"/>
+						<MediaRef Id="131990365"/>
+						<MediaRef Id="1073689216"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1852392477" Name="MysticsItems_Play_item_proc_gunpowder">
+					<MediaRefs>
+						<MediaRef Id="239139982"/>
+						<MediaRef Id="534491431"/>
+						<MediaRef Id="872260772"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2350627810" Name="MysticsItems_Play_item_proc_katana">
+					<MediaRefs>
+						<MediaRef Id="573243926"/>
+						<MediaRef Id="646009852"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1518470914" Name="MysticsItems_Play_item_proc_MysticSword">
+					<MediaRefs>
+						<MediaRef Id="824142622"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3847411431" Name="MysticsItems_Play_item_proc_rhythm_beat">
+					<MediaRefs>
+						<MediaRef Id="405783540"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="986336526" Name="MysticsItems_Play_item_proc_rhythm_hit">
+					<MediaRefs>
+						<MediaRef Id="850619821"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="889636798" Name="MysticsItems_Play_item_proc_rhythm_lower">
+					<MediaRefs>
+						<MediaRef Id="405783540"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1590400542" Name="MysticsItems_Play_item_proc_spineimplant">
+					<MediaRefs>
+						<MediaRef Id="96348864"/>
+						<MediaRef Id="456590317"/>
+						<MediaRef Id="661476053"/>
+						<MediaRef Id="878160346"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="98093525" Name="MysticsItems_Play_item_proc_VyraelCommandments">
+					<MediaRefs>
+						<MediaRef Id="175414132"/>
+						<MediaRef Id="280497527"/>
+						<MediaRef Id="561359430"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2910765757" Name="MysticsItems_Play_item_use_fragileMask_off">
+					<MediaRefs>
+						<MediaRef Id="787382395"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3421906577" Name="MysticsItems_Play_item_use_fragileMask_on">
+					<MediaRefs>
+						<MediaRef Id="326188006"/>
+						<MediaRef Id="376793136"/>
+						<MediaRef Id="1027297962"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="391110633" Name="MysticsItems_Play_item_use_microphone">
+					<MediaRefs>
+						<MediaRef Id="374013065"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3330763701" Name="MysticsItems_Play_item_use_OmarHackTool">
+					<MediaRefs>
+						<MediaRef Id="722490220"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1520338018" Name="MysticsItems_Play_item_use_sirenpole">
+					<MediaRefs>
+						<MediaRef Id="70276486"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1194743725" Name="MysticsItems_Play_mechanicalArm_impact">
+					<MediaRefs>
+						<MediaRef Id="183431664"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4120573555" Name="MysticsItems_Play_mechanicalArm_swing">
+					<MediaRefs>
+						<MediaRef Id="371610572"/>
+						<MediaRef Id="562898796"/>
+						<MediaRef Id="1027651033"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="586924275" Name="MysticsItems_Play_mechanicalArm_swing_prepare">
+					<MediaRefs>
+						<MediaRef Id="154485861"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3461531314" Name="MysticsItems_Play_riftLens_countdown_10">
+					<MediaRefs>
+						<MediaRef Id="790278177"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1748152553" Name="Play_env_riftchest_open">
+					<MediaRefs>
+						<MediaRef Id="177207440"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="960910723" Name="Play_item_allydeathrevenge_proc">
+					<MediaRefs>
+						<MediaRef Id="849440867"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1651353631" Name="Play_item_proc_dasherdisc">
+					<MediaRefs>
+						<MediaRef Id="10955465"/>
+						<MediaRef Id="807585537"/>
+						<MediaRef Id="922498714"/>
+						<MediaRef Id="1012860278"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1422900995" Name="Play_item_proc_iceRingSpear">
+					<MediaRefs>
+						<MediaRef Id="948435148"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="89419390" Name="Play_item_proc_spotter">
+					<MediaRefs>
+						<MediaRef Id="426134208"/>
+						<MediaRef Id="646401957"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2965962513" Name="Play_item_use_tuningfork">
+					<MediaRefs>
+						<MediaRef Id="435304172"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{0E73D9C1-F37D-DEF6-20F8-BBCACFD67E31}</FileHash>
+</SoundBanksInfo>

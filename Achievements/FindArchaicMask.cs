@@ -5,7 +5,7 @@ namespace MysticsItems.Achievements
 {
     public class FindArchaicMask
     {
-		[RegisterAchievement("MysticsItems_FindArchaicMask", "Equipment.MysticsItems_ArchaicMask", null, typeof(Server))]
+		[RegisterAchievement("MysticsItems_FindArchaicMask", "Equipment.MysticsItems_ArchaicMask", null, 3, typeof(Server))]
 		public class Tracker : BaseAchievement
 		{
 			public override void OnInstall()

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MysticsItems.Achievements
 {
-	[RegisterAchievement("MysticsItems_ManyAllies", "Items.MysticsItems_BuffInTPRange", null, typeof(Server))]
+	[RegisterAchievement("MysticsItems_ManyAllies", "Items.MysticsItems_BuffInTPRange", null, 3, typeof(Server))]
 	public class ManyAllies : BaseAchievement
 	{
 		public override void OnInstall()

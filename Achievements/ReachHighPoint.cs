@@ -7,7 +7,7 @@ namespace MysticsItems.Achievements
 {
     public class ReachHighPoint
     {
-        [RegisterAchievement("MysticsItems_ReachHighPoint", "Items.MysticsItems_Backpack", null, null)]
+        [RegisterAchievement("MysticsItems_ReachHighPoint", "Items.MysticsItems_Backpack", null, 3, null)]
         public class Tracker : BaseAchievement
 		{
             public Dictionary<string, float> stageInfo = new Dictionary<string, float>()

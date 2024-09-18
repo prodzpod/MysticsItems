@@ -1,0 +1,85 @@
+Event	ID	Name			Wwise Object Path	Notes
+	89419390	Play_item_proc_spotter			\Default Work Unit\Play_item_proc_spotter	
+	98093525	MysticsItems_Play_item_proc_VyraelCommandments			\Default Work Unit\MysticsItems_Play_item_proc_VyraelCommandments	
+	287601568	MysticsItems_Play_item_proc_blender			\Default Work Unit\MysticsItems_Play_item_proc_blender	
+	323928108	MysticsItems_Play_env_sirenpole			\Default Work Unit\MysticsItems_Play_env_sirenpole	
+	391110633	MysticsItems_Play_item_use_microphone			\Default Work Unit\MysticsItems_Play_item_use_microphone	
+	586924275	MysticsItems_Play_mechanicalArm_swing_prepare			\Default Work Unit\MysticsItems_Play_mechanicalArm_swing_prepare	
+	660797122	MysticsItems_Play_fallenStar_collect			\Default Work Unit\MysticsItems_Play_fallenStar_collect	
+	867628484	MysticsItems_Play_item_proc_droneWires			\Default Work Unit\MysticsItems_Play_item_proc_droneWires	
+	889636798	MysticsItems_Play_item_proc_rhythm_lower			\Default Work Unit\MysticsItems_Play_item_proc_rhythm_lower	
+	960910723	Play_item_allydeathrevenge_proc			\Default Work Unit\Play_item_allydeathrevenge_proc	
+	986336526	MysticsItems_Play_item_proc_rhythm_hit			\Default Work Unit\MysticsItems_Play_item_proc_rhythm_hit	
+	1035564147	MysticsItems_Play_env_OmarHackTool			\Default Work Unit\MysticsItems_Play_env_OmarHackTool	
+	1194743725	MysticsItems_Play_mechanicalArm_impact			\Default Work Unit\MysticsItems_Play_mechanicalArm_impact	
+	1422900995	Play_item_proc_iceRingSpear			\Default Work Unit\Play_item_proc_iceRingSpear	
+	1518470914	MysticsItems_Play_item_proc_MysticSword			\Default Work Unit\MysticsItems_Play_item_proc_MysticSword	
+	1520338018	MysticsItems_Play_item_use_sirenpole			\Default Work Unit\MysticsItems_Play_item_use_sirenpole	
+	1590400542	MysticsItems_Play_item_proc_spineimplant			\Default Work Unit\MysticsItems_Play_item_proc_spineimplant	
+	1651353631	Play_item_proc_dasherdisc			\Default Work Unit\Play_item_proc_dasherdisc	
+	1748152553	Play_env_riftchest_open			\Default Work Unit\Play_env_riftchest_open	
+	1796747965	MysticsItems_Play_item_proc_creditcard			\Default Work Unit\MysticsItems_Play_item_proc_creditcard	
+	1852392477	MysticsItems_Play_item_proc_gunpowder			\Default Work Unit\MysticsItems_Play_item_proc_gunpowder	
+	2350627810	MysticsItems_Play_item_proc_katana			\Default Work Unit\MysticsItems_Play_item_proc_katana	
+	2910765757	MysticsItems_Play_item_use_fragileMask_off			\Default Work Unit\MysticsItems_Play_item_use_fragileMask_off	
+	2965962513	Play_item_use_tuningfork			\Default Work Unit\Play_item_use_tuningfork	
+	3330763701	MysticsItems_Play_item_use_OmarHackTool			\Default Work Unit\MysticsItems_Play_item_use_OmarHackTool	
+	3421906577	MysticsItems_Play_item_use_fragileMask_on			\Default Work Unit\MysticsItems_Play_item_use_fragileMask_on	
+	3461531314	MysticsItems_Play_riftLens_countdown_10			\Default Work Unit\MysticsItems_Play_riftLens_countdown_10	
+	3847411431	MysticsItems_Play_item_proc_rhythm_beat			\Default Work Unit\MysticsItems_Play_item_proc_rhythm_beat	
+	4120573555	MysticsItems_Play_mechanicalArm_swing			\Default Work Unit\MysticsItems_Play_mechanicalArm_swing	
+	4234893182	MysticsItems_Play_env_treasuremap			\Default Work Unit\MysticsItems_Play_env_treasuremap	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	10955465	45_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\45.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\item_proc_dasherdisc\45_wem		112282
+	23409801	13_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\13.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\13_wem		479032
+	70276486	37_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\37.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\37_wem		104444
+	96348864	20_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\20.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_spineimplant\20_wem		48224
+	96889460	51_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\51.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_droneWires\51_wem		86336
+	120459292	27_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\27.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_droneWires\27_wem		86336
+	122444054	06_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\06.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\06_wem		80608
+	131990365	19_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\19.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_droneWires\19_wem		86336
+	154485861	50_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\50.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\50_wem		218356
+	175414132	09_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\09.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_VyraelCommandments\09_wem		79372
+	177207440	47_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\47.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\47_wem		188456
+	183431664	17_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\17.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\17_wem		307920
+	228223022	35_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\35.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\35_wem		573124
+	231387834	23_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\23.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\23_wem		77408
+	239139982	16_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\16.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_gunpowder\16_wem		96028
+	280497527	36_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\36.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_VyraelCommandments\36_wem		111288
+	324785963	28_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\28.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\28_wem		540444
+	326188006	02_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\02.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_use_fragileMask_on\02_wem		136208
+	371610572	04_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\04.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_mechanicalArm_swing\04_wem		161480
+	374013065	12_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\12.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\12_wem		181344
+	376793136	40_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\40.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_use_fragileMask_on\40_wem		145144
+	405783540	25_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\25.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\25_wem		133744
+	426134208	39_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\39.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\39_wem		86272
+	435304172	41_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\41.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\41_wem		282948
+	437684689	32_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\32.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\32_wem		213476
+	456590317	44_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\44.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_spineimplant\44_wem		132192
+	495600733	21_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\21.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_blender\21_wem		64216
+	534491431	26_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\26.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_gunpowder\26_wem		130248
+	561359430	14_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\14.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_VyraelCommandments\14_wem		84520
+	562898796	22_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\22.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_mechanicalArm_swing\22_wem		147736
+	573243926	11_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\11.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_katana\11_wem		268368
+	646009852	33_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\33.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_katana\33_wem		268368
+	646401957	52_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\52.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\52_wem		15376
+	661476053	08_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\08.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_spineimplant\08_wem		47684
+	722490220	31_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\31.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\31_wem		102080
+	742534235	42_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\42.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_blender\42_wem		68416
+	787382395	01_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\01.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\01_wem		268448
+	790278177	38_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\38.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\38_wem		1764128
+	807585537	07_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\07.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\item_proc_dasherdisc\07_wem		189870
+	824142622	49_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\49.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\49_wem		234028
+	849440867	10_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\10.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\10_wem		182228
+	850619821	34_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\34.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\34_wem		398124
+	872260772	24_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\24.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_gunpowder\24_wem		81284
+	878160346	43_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\43.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_spineimplant\43_wem		99952
+	922498714	05_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\05.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\item_proc_dasherdisc\05_wem		159068
+	948435148	03_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\03.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\03_wem		53344
+	967597238	29_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\29.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_blender\29_wem		57644
+	1012860278	15_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\15.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\item_proc_dasherdisc\15_wem		156626
+	1027297962	18_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\18.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_use_fragileMask_on\18_wem		130044
+	1027651033	30_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\30.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_mechanicalArm_swing\30_wem		167736
+	1073689216	46_wem	C:\Users\User\Desktop\Development\RoR2\MysticsItems\Wwise\MysticItems_Wwise\.cache\Windows\SFX\46.wem_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\MysticsItems_item_proc_droneWires\46_wem		86336
+

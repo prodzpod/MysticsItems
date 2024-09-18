@@ -5,7 +5,7 @@ namespace MysticsItems.Achievements
 {
     public class HellSpeedrun
     {
-		[RegisterAchievement("MysticsItems_HellSpeedrun", "Items.MysticsItems_RiftLens", null, typeof(Server))]
+		[RegisterAchievement("MysticsItems_HellSpeedrun", "Items.MysticsItems_RiftLens", null, 3, typeof(Server))]
 		public class Tracker : BaseAchievement
 		{
 			public override void OnInstall()

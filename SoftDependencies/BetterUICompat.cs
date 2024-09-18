@@ -1,3 +1,4 @@
+/*
 using RoR2;
 using BepInEx.Configuration;
 using System.Collections.Generic;
@@ -725,3 +726,4 @@ namespace MysticsItems.SoftDependencies
         }
     }
 }
+*/

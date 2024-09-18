@@ -70,7 +70,7 @@ namespace MysticsItems.Items
             };
             itemDef.pickupModelPrefab = PrepareModel(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Voltmeter/Model.prefab"));
             itemDef.pickupIconSprite = Main.AssetBundle.LoadAsset<Sprite>("Assets/Items/Voltmeter/Icon.png");
-            Material matVoltmeterCoil = itemDef.pickupModelPrefab.transform.Find("Öèëèíäð.001").GetComponent<MeshRenderer>().sharedMaterial;
+            Material matVoltmeterCoil = itemDef.pickupModelPrefab.transform.Find("¬¸¬Ú¬Ý¬Ú¬ß¬Õ¬â.001").GetComponent<MeshRenderer>().sharedMaterial;
             HopooShaderToMaterial.Standard.Apply(matVoltmeterCoil);
             HopooShaderToMaterial.Standard.Emission(matVoltmeterCoil, 2f, matVoltmeterCoil.color);
             Material matVoltmeter = itemDef.pickupModelPrefab.transform.Find("Cube").GetComponent<MeshRenderer>().sharedMaterial;

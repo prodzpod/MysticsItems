@@ -365,7 +365,7 @@ namespace MysticsItems.Items
                 return MysticsRisky2Utils.PlainHologram.hologramContentPrefab;
             }
 
-            public void UpdateHologramContent(GameObject hologramContentObject)
+            public void UpdateHologramContent(GameObject hologramContentObject, Transform viewerBody)
             {
                 var component = hologramContentObject.GetComponent<PlainHologram.MysticsRisky2UtilsPlainHologramContent>();
                 if (component)

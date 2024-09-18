@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MysticsItems.Achievements
 {
-	[RegisterAchievement("MysticsItems_Woolierush", "Items.MysticsItems_Rhythm", null, typeof(Server))]
+	[RegisterAchievement("MysticsItems_Woolierush", "Items.MysticsItems_Rhythm", null, 3, typeof(Server))]
 	public class Woolierush : BaseAchievement
 	{
 		public override void OnInstall()

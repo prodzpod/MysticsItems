@@ -1,7 +1,7 @@
 {
-  "name": "MysticsItems",
-  "version_number": "2.1.14",
-  "website_url": "https://github.com/TheMysticSword/MysticsItems",
+  "name": "RealerMysticsItems",
+  "version_number": "2.1.15",
+  "website_url": "https://github.com/prodzpod/MysticsItems",
   "description": "Adds 50 new items!",
   "dependencies": [
     "bbepis-BepInExPack-5.4.1905",
@@ -14,6 +14,6 @@
     "RiskofThunder-R2API_RecalculateStats-1.2.0",
     "RiskofThunder-R2API_Sound-1.0.0",
     "RiskofThunder-HookGenPatcher-1.2.3",
-    "TheMysticSword-MysticsRisky2Utils-2.0.15"
+    "prodzpod-RealerMysticsRisky2Utils-2.0.16"
   ]
 }

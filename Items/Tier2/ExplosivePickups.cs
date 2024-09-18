@@ -1,4 +1,4 @@
-using RoR2;
+п»їusing RoR2;
 using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -90,12 +90,12 @@ namespace MysticsItems.Items
             };
             itemDef.pickupModelPrefab = PrepareModel(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Contraband Gunpowder/Model.prefab"));
             itemDef.pickupIconSprite = Main.AssetBundle.LoadAsset<Sprite>("Assets/Items/Contraband Gunpowder/Icon.png");
-            HopooShaderToMaterial.Standard.Apply(itemDef.pickupModelPrefab.transform.Find("мешок").Find("порох").GetComponent<MeshRenderer>().sharedMaterial);
-            HopooShaderToMaterial.Standard.Apply(itemDef.pickupModelPrefab.transform.Find("мешок").GetComponent<MeshRenderer>().sharedMaterial);
-            HopooShaderToMaterial.Standard.Apply(itemDef.pickupModelPrefab.transform.Find("мешок").Find("верёвка").GetComponent<MeshRenderer>().sharedMaterial);
-            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("мешок").Find("порох").GetComponent<MeshRenderer>().sharedMaterial, 0f);
-            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("мешок").GetComponent<MeshRenderer>().sharedMaterial, 0f);
-            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("мешок").Find("верёвка").GetComponent<MeshRenderer>().sharedMaterial, 0.4f);
+            HopooShaderToMaterial.Standard.Apply(itemDef.pickupModelPrefab.transform.Find("РјРµС€РѕРє").Find("РїРѕСЂРѕС…").GetComponent<MeshRenderer>().sharedMaterial);
+            HopooShaderToMaterial.Standard.Apply(itemDef.pickupModelPrefab.transform.Find("РјРµС€РѕРє").GetComponent<MeshRenderer>().sharedMaterial);
+            HopooShaderToMaterial.Standard.Apply(itemDef.pickupModelPrefab.transform.Find("РјРµС€РѕРє").Find("РІРµСЂС‘РІРєР°").GetComponent<MeshRenderer>().sharedMaterial);
+            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("РјРµС€РѕРє").Find("РїРѕСЂРѕС…").GetComponent<MeshRenderer>().sharedMaterial, 0f);
+            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("РјРµС€РѕРє").GetComponent<MeshRenderer>().sharedMaterial, 0f);
+            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("РјРµС€РѕРє").Find("РІРµСЂС‘РІРєР°").GetComponent<MeshRenderer>().sharedMaterial, 0.4f);
             itemDisplayPrefab = PrepareItemDisplayModel(PrefabAPI.InstantiateClone(itemDef.pickupModelPrefab, itemDef.pickupModelPrefab.name + "Display", false));
             onSetupIDRS += () =>
             {
@@ -132,7 +132,7 @@ namespace MysticsItems.Items
             BeginRapidlyActivatingAndDeactivating blink = gunpowderPickup.AddComponent<BeginRapidlyActivatingAndDeactivating>();
             blink.blinkFrequency = 20f;
             blink.delayBeforeBeginningBlinking = destroyOnTimer.duration - 1f;
-            blink.blinkingRootObject = gunpowderPickup.transform.Find("мешок").gameObject;
+            blink.blinkingRootObject = gunpowderPickup.transform.Find("РјРµС€РѕРє").gameObject;
 
             Rigidbody rigidbody = gunpowderPickup.GetComponent<Rigidbody>();
             VelocityRandomOnStart velocity = gunpowderPickup.AddComponent<VelocityRandomOnStart>();

@@ -1,4 +1,4 @@
-using RoR2;
+п»їusing RoR2;
 using UnityEngine;
 using Rewired.ComponentControls.Effects;
 using MysticsRisky2Utils;
@@ -25,11 +25,11 @@ namespace MysticsItems.Items
 
             itemDisplayPrefab = PrepareItemDisplayModel(PrepareModel(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Marwan's Ash/Level 2/DisplayModel.prefab")));
 
-            SetScalableChildEffect(itemDef.pickupModelPrefab, "Цилиндр/FireEffects/Point Light");
-            SetScalableChildEffect(itemDef.pickupModelPrefab, "Цилиндр/FireEffectsBottom/Point Light");
+            SetScalableChildEffect(itemDef.pickupModelPrefab, "Р¦РёР»РёРЅРґСЂ/FireEffects/Point Light");
+            SetScalableChildEffect(itemDef.pickupModelPrefab, "Р¦РёР»РёРЅРґСЂ/FireEffectsBottom/Point Light");
 
             /*
-            Material matMarwanAshFire = itemDef.pickupModelPrefab.transform.Find("Цилиндр/FireEffects/Fire").gameObject.GetComponent<Renderer>().sharedMaterial;
+            Material matMarwanAshFire = itemDef.pickupModelPrefab.transform.Find("Р¦РёР»РёРЅРґСЂ/FireEffects/Fire").gameObject.GetComponent<Renderer>().sharedMaterial;
             HopooShaderToMaterial.CloudRemap.Apply(
                 matMarwanAshFire,
                 Main.AssetBundle.LoadAsset<Texture>("Assets/Items/Marwan's Ash/Level 2/texMarwanAshFireRamp.png")

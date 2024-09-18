@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{D9A625B9-E1AB-490A-B802-D83FFC8E11AE}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{D9A625B9-E1AB-490A-B802-D83FFC8E11AE}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="MysticsItems" ID="{CFFBA522-AB12-4BD1-B152-4336E4B5AD88}">
+					<ObjectInclusionList>
+						<ObjectRef Name="MysticsItems_Play_item_proc_rhythm_hit" ID="{A485255D-0AE6-403D-85AD-C8ED3E27EEA3}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_MysticSword" ID="{EC24EE94-6DCB-40D9-A1F7-963790744024}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_fallenStar_collect" ID="{5A639CCD-0508-4119-AF91-4373B4F7B523}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_use_microphone" ID="{8EF50C6C-8988-41D1-B4AB-59254471FAEA}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_use_fragileMask_off" ID="{E20DC779-B7E0-4221-8326-E302E54E0B4A}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_use_sirenpole" ID="{DB7D3AFD-6EE1-42F7-B0E5-AF8DB333978B}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_blender" ID="{7242B7CC-D626-43CB-B30C-D10F98397EA0}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_env_sirenpole" ID="{C6690C4E-AF3D-43D1-85FE-CD9D1BC8A1DD}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_VyraelCommandments" ID="{CFE8A81D-7144-43E4-A1E7-5802B82469EB}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_rhythm_lower" ID="{6574753A-2FAA-43E5-A449-598EB08CA564}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_env_treasuremap" ID="{275D7550-7C9B-457B-B7DB-47F2A9D19744}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_env_OmarHackTool" ID="{8258FC5D-148E-45F8-8D01-0A01ADD2A20D}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_item_proc_dasherdisc" ID="{42C802BD-F764-46EA-83BF-BB1B5AE43059}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_env_riftchest_open" ID="{A209C401-B26B-4728-BF2F-4693A507C24E}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_item_proc_spotter" ID="{EF15642F-ED62-4778-BA26-48A0024B245F}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_mechanicalArm_swing" ID="{CBC4FB74-78A0-47C0-9371-BC9D1371EED3}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_gunpowder" ID="{2C2E401E-1267-4858-80D8-544CF3E1FC73}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_item_allydeathrevenge_proc" ID="{CAA34163-3E2B-4918-A1A6-8ED0BC440FBC}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_item_use_tuningfork" ID="{5B09927C-32CD-4963-8834-0867572F4801}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_mechanicalArm_impact" ID="{D81B5CD7-BD1E-4980-BD09-4564D0096842}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_use_OmarHackTool" ID="{0336D42E-AA0B-49E9-AB37-AA805C4CF296}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_katana" ID="{E13E99C2-7E1C-4A67-B4C9-AC5A3754490A}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_use_fragileMask_on" ID="{111BB327-A9F0-4A8E-80E7-4E068CAD51EB}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_creditcard" ID="{A4FC2564-68CD-4AA4-BC29-532A995B5528}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_mechanicalArm_swing_prepare" ID="{C78F276A-67C3-4BBA-969A-042E5512043A}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_rhythm_beat" ID="{906415CA-B06F-4C27-B6F7-B69A139FEE7E}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_riftLens_countdown_10" ID="{FE3D449D-C6D6-4C6A-B7B0-0E94DFA22CFC}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_droneWires" ID="{8661A702-348C-4C8E-A63E-89A3B5160134}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_item_proc_iceRingSpear" ID="{7D523038-F003-4D3B-BD02-4609DECB5C23}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="MysticsItems_Play_item_proc_spineimplant" ID="{2A5E0CB9-3462-4F97-8CDD-7C7054451A14}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

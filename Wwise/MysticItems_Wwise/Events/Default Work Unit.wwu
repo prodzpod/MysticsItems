@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="MysticsItems_Play_item_use_fragileMask_off" ID="{E20DC779-B7E0-4221-8326-E302E54E0B4A}">
+					<ChildrenList>
+						<Action Name="" ID="{E39A23BA-8980-464B-8952-0D8F427C6BE3}" ShortID="731553144">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="01_wem" ID="{CF4E1860-7C7B-483C-87ED-FB0F21C34B4E}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_item_proc_iceRingSpear" ID="{7D523038-F003-4D3B-BD02-4609DECB5C23}">
+					<ChildrenList>
+						<Action Name="" ID="{26DF4777-1DC1-4CD9-8D75-AB52946643CB}" ShortID="351950770">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="03_wem" ID="{C14A0BAD-BB64-4D92-AB0B-A84E39F189B3}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_fallenStar_collect" ID="{5A639CCD-0508-4119-AF91-4373B4F7B523}">
+					<ChildrenList>
+						<Action Name="" ID="{AF5D7483-A8D5-479A-A603-514BAF5E4F11}" ShortID="1067724755">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="06_wem" ID="{A4F236AA-90BD-4D91-A0D6-F75F79BD02FD}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_item_allydeathrevenge_proc" ID="{CAA34163-3E2B-4918-A1A6-8ED0BC440FBC}">
+					<ChildrenList>
+						<Action Name="" ID="{7D72189F-15F8-4596-9490-CB8A09A40460}" ShortID="232376649">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="10_wem" ID="{337160D4-6E9F-4D47-8EB5-4D9691B14DE7}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_use_microphone" ID="{8EF50C6C-8988-41D1-B4AB-59254471FAEA}">
+					<ChildrenList>
+						<Action Name="" ID="{3CF9490E-16DC-4FAD-95FB-8914B0A62887}" ShortID="30766848">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="12_wem" ID="{47DE92AA-D5AE-4F8F-BCAF-D741605CE32D}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_env_sirenpole" ID="{C6690C4E-AF3D-43D1-85FE-CD9D1BC8A1DD}">
+					<ChildrenList>
+						<Action Name="" ID="{AF87F290-0D4C-4B78-8330-EE5CCEA084B7}" ShortID="43326681">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="13_wem" ID="{0357D917-05D4-4899-9733-5F025C40A9FA}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_mechanicalArm_impact" ID="{D81B5CD7-BD1E-4980-BD09-4564D0096842}">
+					<ChildrenList>
+						<Action Name="" ID="{6E609102-A53A-408A-B616-B3B70B993C1F}" ShortID="150343953">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="17_wem" ID="{B0A27222-78B8-4640-81E0-E98610E730CD}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_creditcard" ID="{A4FC2564-68CD-4AA4-BC29-532A995B5528}">
+					<ChildrenList>
+						<Action Name="" ID="{2A2E13F7-B96C-4AAF-821E-FEDDC66477B7}" ShortID="1018489801">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="23_wem" ID="{08492F58-7603-4E6C-9ED1-97F0F2A9A3F0}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_rhythm_beat" ID="{906415CA-B06F-4C27-B6F7-B69A139FEE7E}">
+					<ChildrenList>
+						<Action Name="" ID="{06A86EF0-1120-424B-88A0-E5FA04755E58}" ShortID="393773580">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="25_wem" ID="{B6B93591-CB21-45D3-84F8-19307FD55373}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_env_OmarHackTool" ID="{8258FC5D-148E-45F8-8D01-0A01ADD2A20D}">
+					<ChildrenList>
+						<Action Name="" ID="{ACF2288B-BBE1-4EA6-960B-5A15BB4F5A9A}" ShortID="942061402">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="28_wem" ID="{3A21FA87-56F7-48C2-BC07-11516A2927BC}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_use_OmarHackTool" ID="{0336D42E-AA0B-49E9-AB37-AA805C4CF296}">
+					<ChildrenList>
+						<Action Name="" ID="{6CFD2C48-3AAD-43F6-B3C0-90F0A87032B1}" ShortID="700064405">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="31_wem" ID="{78CC94E5-45E1-4F94-A9DB-9F7F7BA488AC}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_rhythm_hit" ID="{A485255D-0AE6-403D-85AD-C8ED3E27EEA3}">
+					<ChildrenList>
+						<Action Name="" ID="{D1F04528-B8C6-4537-ACB4-EE5918A2B99E}" ShortID="963749653">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="34_wem" ID="{F0399863-161A-4BE8-8B6D-27E320E3CC81}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_env_treasuremap" ID="{275D7550-7C9B-457B-B7DB-47F2A9D19744}">
+					<ChildrenList>
+						<Action Name="" ID="{5570085D-3193-47C1-8803-DFA5B7D4037D}" ShortID="418096574">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="35_wem" ID="{5D94B22B-6A8F-4AC5-9373-D61EA9515FFE}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_use_sirenpole" ID="{DB7D3AFD-6EE1-42F7-B0E5-AF8DB333978B}">
+					<ChildrenList>
+						<Action Name="" ID="{EE865D27-3435-4CF9-A76D-FE93A5F017B4}" ShortID="585181743">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="37_wem" ID="{0BB7EBD4-31ED-40FF-87C2-62391B8D2F5B}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_riftLens_countdown_10" ID="{FE3D449D-C6D6-4C6A-B7B0-0E94DFA22CFC}">
+					<ChildrenList>
+						<Action Name="" ID="{4C103F59-4A3F-4CF8-916F-2F7DB605C723}" ShortID="908243564">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="38_wem" ID="{D7EEC214-F960-4ECA-A1A3-08C39255A78B}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_item_use_tuningfork" ID="{5B09927C-32CD-4963-8834-0867572F4801}">
+					<ChildrenList>
+						<Action Name="" ID="{2053B429-F34B-47B8-A6C6-7925CB797CB6}" ShortID="5210300">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="41_wem" ID="{27BF1201-9237-403B-A588-0C6598E38C9A}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_env_riftchest_open" ID="{A209C401-B26B-4728-BF2F-4693A507C24E}">
+					<ChildrenList>
+						<Action Name="" ID="{D0854E55-4BFE-45ED-A09C-EDFAA9A5ACCC}" ShortID="616771254">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="47_wem" ID="{13817A39-95DC-4FF1-9A2B-27E1DD9EB5FD}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_MysticSword" ID="{EC24EE94-6DCB-40D9-A1F7-963790744024}">
+					<ChildrenList>
+						<Action Name="" ID="{24410C65-F4E9-466D-BA78-56C821E31D32}" ShortID="597198175">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="49_wem" ID="{ACDD535D-8D20-49A4-B129-1741FD9D4B01}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_mechanicalArm_swing_prepare" ID="{C78F276A-67C3-4BBA-969A-042E5512043A}">
+					<ChildrenList>
+						<Action Name="" ID="{95FFD5E0-5085-4AB0-8986-BB8D63D7CAEF}" ShortID="96918831">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="50_wem" ID="{E7CAC7EC-648A-44FC-BBAA-26B862791346}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_rhythm_lower" ID="{6574753A-2FAA-43E5-A449-598EB08CA564}">
+					<ChildrenList>
+						<Action Name="" ID="{1AAAA39D-2EEE-4235-B2FA-5C9F3718C9B6}" ShortID="27875027">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="25_wem" ID="{B6B93591-CB21-45D3-84F8-19307FD55373}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_blender" ID="{7242B7CC-D626-43CB-B30C-D10F98397EA0}">
+					<ChildrenList>
+						<Action Name="" ID="{C20E569F-C8FD-46FF-B119-45970111A0B6}" ShortID="1040975069">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_proc_blender" ID="{812E2367-5C86-4D38-B798-3BBCE607D4FF}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{62CB7B5A-0BBE-4504-8D96-0570A854DB5D}" ShortID="973430459">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="32_wem" ID="{6B6D48D9-D2B9-4BAD-A6E2-79E05844D34D}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_droneWires" ID="{8661A702-348C-4C8E-A63E-89A3B5160134}">
+					<ChildrenList>
+						<Action Name="" ID="{F7530A4C-7A7D-4B34-852F-D29B337693DF}" ShortID="822312672">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_proc_droneWires" ID="{52407EFD-09B2-4078-9B9A-D4B1A760613D}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_gunpowder" ID="{2C2E401E-1267-4858-80D8-544CF3E1FC73}">
+					<ChildrenList>
+						<Action Name="" ID="{CA599E98-F963-4E34-9238-191F7737B3A8}" ShortID="587169053">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_proc_gunpowder" ID="{44E832BF-D7FC-455E-86C3-0F5615D75251}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_katana" ID="{E13E99C2-7E1C-4A67-B4C9-AC5A3754490A}">
+					<ChildrenList>
+						<Action Name="" ID="{0459CA77-7974-4EDF-989F-7590389A8FCE}" ShortID="875227430">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_proc_katana" ID="{38C0E6AA-D271-4E6E-BEB7-83B5E71211D0}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_spineimplant" ID="{2A5E0CB9-3462-4F97-8CDD-7C7054451A14}">
+					<ChildrenList>
+						<Action Name="" ID="{BDE12478-72C3-41D2-A7C2-206E5D1BB366}" ShortID="532409966">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_proc_spineimplant" ID="{3CAB0781-478E-4F17-9C75-F7631338F346}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_proc_VyraelCommandments" ID="{CFE8A81D-7144-43E4-A1E7-5802B82469EB}">
+					<ChildrenList>
+						<Action Name="" ID="{AA13534E-FC2A-4AB1-A1D9-EC65B335ACF4}" ShortID="192774562">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_proc_VyraelCommandments" ID="{9FF72A63-EC0D-48CF-B1EA-8E2C4CA70DDC}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_item_use_fragileMask_on" ID="{111BB327-A9F0-4A8E-80E7-4E068CAD51EB}">
+					<ChildrenList>
+						<Action Name="" ID="{D7A6E6E9-B48B-4F3C-B5EA-D54FADAD8327}" ShortID="388294478">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_item_use_fragileMask_on" ID="{2DFF46C8-F922-466C-9436-54099714986E}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MysticsItems_Play_mechanicalArm_swing" ID="{CBC4FB74-78A0-47C0-9371-BC9D1371EED3}">
+					<ChildrenList>
+						<Action Name="" ID="{6470B1EE-2050-4F7E-A593-3525307B417A}" ShortID="174366073">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MysticsItems_mechanicalArm_swing" ID="{43F519F6-E37C-41DA-B1DE-A09E4BE4D345}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_item_proc_dasherdisc" ID="{42C802BD-F764-46EA-83BF-BB1B5AE43059}">
+					<ChildrenList>
+						<Action Name="" ID="{A4599355-AA65-4D1B-9941-70DD477FEA09}" ShortID="684546933">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="item_proc_dasherdisc" ID="{BA870005-7F98-4F50-AFAF-BB4A340CA1AE}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_item_proc_spotter" ID="{EF15642F-ED62-4778-BA26-48A0024B245F}">
+					<ChildrenList>
+						<Action Name="" ID="{588F83EA-6ACB-4556-A9FA-AAB0A460ABD5}" ShortID="511992456">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="39_wem" ID="{F0A93433-A275-4C6C-A1EF-3ECB54F27278}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{627B303F-0E9A-4C3B-B142-A1186F1C6747}" ShortID="1045705570">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E30CE0B0-0454-4C40-809E-E3175C9C0266}" ShortID="379615293">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{ECB95393-3FDF-4358-B179-CECCB23443A7}" ShortID="669028569">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="0.7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4920590E-746A-47B4-A14C-AF5028DABF57}" ShortID="824894407">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4903C3BA-1E6F-4D61-8E74-5A14F74EA92B}" ShortID="604531641">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1.6"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{06736FC2-1772-4EF8-BC38-B1B1808EA898}" ShortID="532243989">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1.7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" WorkUnitID="{48244207-685C-4AC7-80D8-E2347A837BE6}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

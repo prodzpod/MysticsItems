@@ -4,7 +4,7 @@ using RoR2.Stats;
 
 namespace MysticsItems.Achievements
 {
-    [RegisterAchievement("MysticsItems_BlockDamageWithArmor", "Items.MysticsItems_Nanomachines", null, null)]
+    [RegisterAchievement("MysticsItems_BlockDamageWithArmor", "Items.MysticsItems_Nanomachines", null, 3, null)]
 	public class BlockDamageWithArmor : BaseStatMilestoneAchievement
 	{
 		public override StatDef statDef

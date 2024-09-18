@@ -1,3 +1,6 @@
+#### 2.1.15
+* fixes for SotS
+* You want to know how I got wwise to work? <img src="https://raw.githubusercontent.com/prodzpod/MysticsItems/main/joker.png">
 #### 2.1.14:
 * Fixed certain null object reference checks
 #### 2.1.13:

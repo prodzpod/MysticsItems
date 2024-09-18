@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MysticsItems.Achievements
 {
-	[RegisterAchievement("MysticsItems_FreezelockEnemy", "Items.MysticsItems_SnowRing", null, null)]
+	[RegisterAchievement("MysticsItems_FreezelockEnemy", "Items.MysticsItems_SnowRing", null, 3, null)]
 	public class FreezelockEnemy : BaseAchievement
 	{
 		public static float requirement = 7f;

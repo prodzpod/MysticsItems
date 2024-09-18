@@ -5,7 +5,7 @@ namespace MysticsItems.Achievements
 {
     public class EscapeMoonAlone
     {
-		[RegisterAchievement("MysticsItems_EscapeMoonAlone", "Items.MysticsItems_AllyDeathRevenge", null, typeof(Server))]
+		[RegisterAchievement("MysticsItems_EscapeMoonAlone", "Items.MysticsItems_AllyDeathRevenge", null, 3, typeof(Server))]
 		public class Tracker : BaseAchievement
 		{
 			public override void OnInstall()

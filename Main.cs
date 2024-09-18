@@ -31,7 +31,7 @@ namespace MysticsItems
     {
         public const string PluginGUID = "com.themysticsword.mysticsitems";
         public const string PluginName = "MysticsItems";
-        public const string PluginVersion = "2.1.14";
+        public const string PluginVersion = "2.1.15";
 
         internal static BepInEx.Logging.ManualLogSource logger;
         internal static PluginInfo pluginInfo;
@@ -71,7 +71,7 @@ namespace MysticsItems
 
             ConfigManager.Init();
 
-            SoundAPI.SoundBanks.Add(System.IO.File.ReadAllBytes(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(MysticsItemsPlugin.pluginInfo.Location), "MysticsItemsWwiseSoundbank.bnk")));
+            // SoundAPI.SoundBanks.Add(System.IO.File.ReadAllBytes(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(MysticsItemsPlugin.pluginInfo.Location), "MysticsItemsWwiseSoundbank.bnk")));
 
             executingAssembly = Assembly.GetExecutingAssembly();
             declaringType = MethodBase.GetCurrentMethod().DeclaringType;

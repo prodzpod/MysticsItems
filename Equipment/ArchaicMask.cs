@@ -383,6 +383,11 @@ namespace MysticsItems.Equipment
                 }
             }
 
+            public bool ShouldProximityHighlight()
+            {
+                return true;
+            }
+
             public int remainingTime
             {
                 get

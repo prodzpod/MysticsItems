@@ -49,9 +49,9 @@ namespace MysticsItems.Items
             };
             itemDef.pickupModelPrefab = PrepareModel(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Coffee/Model.prefab"));
             itemDef.pickupIconSprite = Main.AssetBundle.LoadAsset<Sprite>("Assets/Items/Coffee/Icon.png");
-            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("Цилиндр").Find("Цилиндр.001").GetComponent<Renderer>().sharedMaterial, 0f);
+            HopooShaderToMaterial.Standard.Gloss(itemDef.pickupModelPrefab.transform.Find("¬ё¬Ъ¬Э¬Ъ¬Я¬Х¬в").Find("¬ё¬Ъ¬Э¬Ъ¬Я¬Х¬в.001").GetComponent<Renderer>().sharedMaterial, 0f);
             itemDisplayPrefab = PrepareItemDisplayModel(PrefabAPI.InstantiateClone(itemDef.pickupModelPrefab, itemDef.pickupModelPrefab.name + "Display", false));
-            itemDef.pickupModelPrefab.transform.Find("Цилиндр").Rotate(new Vector3(-30f, 0f, 0f), Space.Self);
+            itemDef.pickupModelPrefab.transform.Find("¬ё¬Ъ¬Э¬Ъ¬Я¬Х¬в").Rotate(new Vector3(-30f, 0f, 0f), Space.Self);
             onSetupIDRS += () =>
             {
                 AddDisplayRule("CommandoBody", "HandR", new Vector3(-0.016F, 0.214F, -0.111F), new Vector3(33.043F, 10.378F, 286.615F), new Vector3(0.072F, 0.072F, 0.072F));

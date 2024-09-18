@@ -6,7 +6,7 @@ namespace MysticsItems.Achievements
 {
     public class MultishopTerminalsOnly
     {
-		[RegisterAchievement("MysticsItems_MultishopTerminalsOnly", "Items.MysticsItems_KeepShopTerminalOpen", null, typeof(Server))]
+		[RegisterAchievement("MysticsItems_MultishopTerminalsOnly", "Items.MysticsItems_KeepShopTerminalOpen", null, 3, typeof(Server))]
 		public class Tracker : BaseAchievement
 		{
 			public override void OnInstall()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MysticsItems.Achievements
 {
-	[RegisterAchievement("MysticsItems_HackLegendaryChest", "Items.MysticsItems_TreasureMap", null, typeof(Server))]
+	[RegisterAchievement("MysticsItems_HackLegendaryChest", "Items.MysticsItems_TreasureMap", null, 3, typeof(Server))]
 	public class HackLegendaryChest : BaseAchievement
     {
 		public override void OnInstall()

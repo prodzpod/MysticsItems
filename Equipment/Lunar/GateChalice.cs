@@ -295,7 +295,7 @@ namespace MysticsItems.Equipment
                         if (renderer)
                         {
                             var materials = renderer.materials;
-                            HGArrayUtilities.ArrayAppend(ref materials, ref temporaryOverlay.materialInstance);
+                            HG.ArrayUtils.ArrayAppend(ref materials, temporaryOverlay.materialInstance);
                             renderer.materials = materials;
                         }
                     }
