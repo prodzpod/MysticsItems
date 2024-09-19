@@ -1,3 +1,5 @@
+#### 2.1.16
+* adjusted volumes
 #### 2.1.15
 * fixes for SotS
 * You want to know how I got wwise to work? <img src="https://raw.githubusercontent.com/prodzpod/MysticsItems/main/joker.png">

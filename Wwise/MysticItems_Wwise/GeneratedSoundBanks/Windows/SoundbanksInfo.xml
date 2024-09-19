@@ -162,7 +162,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3216743043" Type="User" Language="SFX" Hash="{4D74BD34-3B0B-EE93-6EE4-98CC4E307008}">
+		<SoundBank Id="3216743043" Type="User" Language="SFX" Hash="{AC5FF7F2-A514-3BEB-3367-35830B481163}">
 			<ShortName>MysticsItems</ShortName>
 			<Path>MysticsItems.bnk</Path>
 			<Media>
@@ -547,5 +547,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0E73D9C1-F37D-DEF6-20F8-BBCACFD67E31}</FileHash>
+	<FileHash>{56035F17-84C9-9EAC-092F-2155C018BC5D}</FileHash>
 </SoundBanksInfo>

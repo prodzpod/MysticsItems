@@ -6,6 +6,9 @@
 				<Sound Name="25_wem" ID="{B6B93591-CB21-45D3-84F8-19307FD55373}" ShortID="37759638">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-17</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{7AFBB515-94D6-4EAB-8ED7-925F41A3F54F}"/>
@@ -37,6 +40,9 @@
 				<Sound Name="28_wem" ID="{3A21FA87-56F7-48C2-BC07-11516A2927BC}" ShortID="501891578">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{4341AC42-1E8F-4459-91E3-EBFB2B90FB0C}"/>
@@ -68,6 +74,9 @@
 				<Sound Name="31_wem" ID="{78CC94E5-45E1-4F94-A9DB-9F7F7BA488AC}" ShortID="834062002">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{2FC7FA19-28F2-4EC4-A1F7-FE0184B0494B}"/>
@@ -97,6 +106,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="32_wem" ID="{6B6D48D9-D2B9-4BAD-A6E2-79E05844D34D}" ShortID="691971198">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -121,6 +137,9 @@
 				<Sound Name="34_wem" ID="{F0399863-161A-4BE8-8B6D-27E320E3CC81}" ShortID="821425253">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{7FD60150-1D66-4962-990A-474E471A7137}"/>
@@ -152,6 +171,9 @@
 				<Sound Name="35_wem" ID="{5D94B22B-6A8F-4AC5-9373-D61EA9515FFE}" ShortID="484749241">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{E965848A-FCE6-42A8-8A4F-0CA6554C5CCD}"/>
@@ -183,6 +205,9 @@
 				<Sound Name="37_wem" ID="{0BB7EBD4-31ED-40FF-87C2-62391B8D2F5B}" ShortID="405443952">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{CC1C9F21-F343-4460-BD90-9A1D14CBCD8E}"/>
@@ -214,6 +239,9 @@
 				<Sound Name="38_wem" ID="{D7EEC214-F960-4ECA-A1A3-08C39255A78B}" ShortID="437867734">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>18</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{BC404654-4127-4D0A-887D-A36A066910A6}"/>
@@ -243,6 +271,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="39_wem" ID="{F0A93433-A275-4C6C-A1EF-3ECB54F27278}" ShortID="932087338">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -265,6 +300,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="41_wem" ID="{27BF1201-9237-403B-A588-0C6598E38C9A}" ShortID="736181226">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -287,6 +329,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="47_wem" ID="{13817A39-95DC-4FF1-9A2B-27E1DD9EB5FD}" ShortID="837010555">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -333,6 +382,9 @@
 				<Sound Name="49_wem" ID="{ACDD535D-8D20-49A4-B129-1741FD9D4B01}" ShortID="714338430">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{E25D209D-EFAF-40AB-A499-85E61D758980}"/>
@@ -364,6 +416,9 @@
 				<Sound Name="50_wem" ID="{E7CAC7EC-648A-44FC-BBAA-26B862791346}" ShortID="530416182">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>18</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{01EF6C68-7AC7-4C7E-9485-D6DB7AAEF222}"/>
@@ -393,6 +448,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="52_wem" ID="{65A581C8-003E-472D-AC66-05CCD7879E94}" ShortID="918736233">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -417,6 +479,9 @@
 				<Sound Name="01_wem" ID="{CF4E1860-7C7B-483C-87ED-FB0F21C34B4E}" ShortID="576359698">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{592D06AA-34B5-4378-BF75-D258D23E161D}"/>
@@ -446,6 +511,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="03_wem" ID="{C14A0BAD-BB64-4D92-AB0B-A84E39F189B3}" ShortID="150034154">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -470,6 +542,9 @@
 				<Sound Name="06_wem" ID="{A4F236AA-90BD-4D91-A0D6-F75F79BD02FD}" ShortID="1062914107">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-11</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{24EC797A-E054-4DD5-A920-49692B1D9F52}"/>
@@ -499,6 +574,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="10_wem" ID="{337160D4-6E9F-4D47-8EB5-4D9691B14DE7}" ShortID="170233111">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -523,6 +605,9 @@
 				<Sound Name="12_wem" ID="{47DE92AA-D5AE-4F8F-BCAF-D741605CE32D}" ShortID="897167408">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{8C3D8555-BDA9-49C5-A86E-15FD4427DC64}"/>
@@ -554,6 +639,9 @@
 				<Sound Name="13_wem" ID="{0357D917-05D4-4899-9733-5F025C40A9FA}" ShortID="1010381680">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-7</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{CF2DAAC4-E3D4-4336-B63B-41239F0F45A3}"/>
@@ -585,6 +673,9 @@
 				<Sound Name="17_wem" ID="{B0A27222-78B8-4640-81E0-E98610E730CD}" ShortID="746302996">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{ECCF12FB-06C1-464E-9ED0-174720579E1F}"/>
@@ -616,6 +707,9 @@
 				<Sound Name="23_wem" ID="{08492F58-7603-4E6C-9ED1-97F0F2A9A3F0}" ShortID="239844348">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-1</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{99433E08-E84F-49CF-989E-12845043670F}"/>
@@ -645,6 +739,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="MysticsItems_item_proc_blender" ID="{812E2367-5C86-4D38-B798-3BBCE607D4FF}" ShortID="429784741">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -723,6 +824,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_item_proc_gunpowder" ID="{44E832BF-D7FC-455E-86C3-0F5615D75251}" ShortID="682417021">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -810,6 +918,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_item_proc_katana" ID="{38C0E6AA-D271-4E6E-BEB7-83B5E71211D0}" ShortID="976814040">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -866,6 +981,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_item_proc_droneWires" ID="{52407EFD-09B2-4078-9B9A-D4B1A760613D}" ShortID="158986811">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -966,6 +1088,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_item_proc_spineimplant" ID="{3CAB0781-478E-4F17-9C75-F7631338F346}" ShortID="325604688">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -1066,6 +1195,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_item_proc_VyraelCommandments" ID="{9FF72A63-EC0D-48CF-B1EA-8E2C4CA70DDC}" ShortID="568929874">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -1144,6 +1280,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_item_use_fragileMask_on" ID="{2DFF46C8-F922-466C-9436-54099714986E}" ShortID="275304653">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -1222,6 +1365,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="MysticsItems_mechanicalArm_swing" ID="{43F519F6-E37C-41DA-B1DE-A09E4BE4D345}" ShortID="409998537">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
@@ -1300,6 +1450,13 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="item_proc_dasherdisc" ID="{BA870005-7F98-4F50-AFAF-BB4A340CA1AE}" ShortID="973031391">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E14B48B2-54BC-45A4-90DB-850543EAD40B}"/>
