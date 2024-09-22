@@ -1,3 +1,5 @@
+#### 2.1.18
+* mystic sword (item) orb vfx fix
 #### 2.1.17
 * sfx now takes volume into account
 #### 2.1.16

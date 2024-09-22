@@ -182,10 +182,7 @@ namespace MysticsItems.Items
                 DestroyOnTimer destroyOnTimer = onKillOrbEffect.transform.Find("Origin/Unparent").gameObject.AddComponent<DestroyOnTimer>();
                 destroyOnTimer.duration = 0.5f;
                 destroyOnTimer.enabled = false;
-                MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults onArrivalDefaults = onKillOrbEffect.AddComponent<MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults>();
-                onArrivalDefaults.orbEffect = orbEffect;
-                onArrivalDefaults.transformsToUnparentChildren = new Transform[] { onKillOrbEffect.transform.Find("Origin/Unparent") };
-                onArrivalDefaults.componentsToEnable = new MonoBehaviour[] { destroyOnTimer };
+                onKillOrbEffect.AddComponent<MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults>();
                 MysticsItemsContent.Resources.effectPrefabs.Add(onKillOrbEffect);
             }
 
@@ -323,7 +320,12 @@ namespace MysticsItems.Items
                                 scale = UnityEngine.Random.Range(0.02f, 0.2f)
                             };
                             effectData.SetHurtBoxReference(RoR2Application.rng.NextElementUniform(onKillOrbTargets));
-                            EffectManager.SpawnEffect(onKillOrbEffect, effectData, true);
+                            var effect = onKillOrbEffect.InstantiateClone("MysticSwordEffectReal");
+                            var onArrivalDefaults = effect.GetComponent<MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults>();
+                            onArrivalDefaults.orbEffect = effect.GetComponent<OrbEffect>();
+                            onArrivalDefaults.transformsToUnparentChildren = new Transform[] { effect.transform.Find("Origin/Unparent") };
+                            onArrivalDefaults.componentsToEnable = new MonoBehaviour[] { effect.transform.Find("Origin/Unparent").gameObject.AddComponent<DestroyOnTimer>() };
+                            EffectManager.SpawnEffect(effect, effectData, true);
                         }
 
                         EffectManager.SpawnEffect(onKillVFX, new EffectData
