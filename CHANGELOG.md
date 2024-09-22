@@ -1,3 +1,5 @@
+#### 2.1.17
+* sfx now takes volume into account
 #### 2.1.16
 * adjusted volumes
 #### 2.1.15

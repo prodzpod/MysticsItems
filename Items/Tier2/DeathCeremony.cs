@@ -198,13 +198,8 @@ namespace MysticsItems.Items
             destroyOnTimer.enabled = false;
             MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults onArrivalDefaults = damageShareOrbEffect.AddComponent<MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults>();
             onArrivalDefaults.orbEffect = orbEffect;
-            onArrivalDefaults.transformsToUnparentChildren = new Transform[] {
-                damageShareOrbEffect.transform
-            };
-            onArrivalDefaults.componentsToEnable = new MonoBehaviour[]
-            {
-                destroyOnTimer
-            };
+            onArrivalDefaults.transformsToUnparentChildren = new Transform[] { damageShareOrbEffect.transform };
+            onArrivalDefaults.componentsToEnable = new MonoBehaviour[] { destroyOnTimer };
             MysticsItemsContent.Resources.effectPrefabs.Add(damageShareOrbEffect);
 
             GenericGameEvents.OnHitEnemy += GenericGameEvents_OnHitEnemy;

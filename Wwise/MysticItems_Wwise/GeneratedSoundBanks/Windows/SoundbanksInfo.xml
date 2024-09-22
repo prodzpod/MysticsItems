@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{AB9F0343-CD85-AB9E-58D8-B63D74A50185}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{BD974DC2-D35B-AA42-186C-7DC0DF1447FD}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -22,16 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<GameParameters>
-				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
-				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
-				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
-				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
-				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
-				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
-				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
-				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
-				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
-				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 			</GameParameters>
 			<AcousticTextures>
 				<AcousticTexture Id="504532776" Name="Brick">
@@ -162,7 +153,7 @@
 				</AcousticTexture>
 			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="3216743043" Type="User" Language="SFX" Hash="{AC5FF7F2-A514-3BEB-3367-35830B481163}">
+		<SoundBank Id="3216743043" Type="User" Language="SFX" Hash="{8094EDF2-62C4-EF05-CB9A-F4263FE906F7}">
 			<ShortName>MysticsItems</ShortName>
 			<Path>MysticsItems.bnk</Path>
 			<Media>
@@ -346,10 +337,6 @@
 					<ShortName>05.wem.wav</ShortName>
 					<CachePath>SFX/05.wem_818F3B66.wem</CachePath>
 				</File>
-				<File Id="948435148" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>03.wem.wav</ShortName>
-					<CachePath>SFX/03.wem_818F3B66.wem</CachePath>
-				</File>
 				<File Id="967597238" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>29.wem.wav</ShortName>
 					<CachePath>SFX/29.wem_818F3B66.wem</CachePath>
@@ -528,11 +515,6 @@
 						<MediaRef Id="1012860278"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1422900995" Name="Play_item_proc_iceRingSpear">
-					<MediaRefs>
-						<MediaRef Id="948435148"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="89419390" Name="Play_item_proc_spotter">
 					<MediaRefs>
 						<MediaRef Id="426134208"/>
@@ -545,7 +527,10 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{56035F17-84C9-9EAC-092F-2155C018BC5D}</FileHash>
+	<FileHash>{42054F52-A571-004E-4E88-3FB6A54571FA}</FileHash>
 </SoundBanksInfo>

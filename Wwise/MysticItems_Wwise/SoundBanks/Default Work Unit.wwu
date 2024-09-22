@@ -33,7 +33,6 @@
 						<ObjectRef Name="MysticsItems_Play_item_proc_rhythm_beat" ID="{906415CA-B06F-4C27-B6F7-B69A139FEE7E}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MysticsItems_Play_riftLens_countdown_10" ID="{FE3D449D-C6D6-4C6A-B7B0-0E94DFA22CFC}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MysticsItems_Play_item_proc_droneWires" ID="{8661A702-348C-4C8E-A63E-89A3B5160134}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="Play_item_proc_iceRingSpear" ID="{7D523038-F003-4D3B-BD02-4609DECB5C23}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="MysticsItems_Play_item_proc_spineimplant" ID="{2A5E0CB9-3462-4F97-8CDD-7C7054451A14}" WorkUnitID="{58F9C7AC-FA14-4941-A69F-C29FA9D999D1}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

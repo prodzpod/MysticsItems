@@ -232,13 +232,8 @@ namespace MysticsItems.Items
                 destroyOnTimer.enabled = false;
                 var onArrivalDefaults = snowRingOrbEffectPrefab.AddComponent<MysticsRisky2Utils.MonoBehaviours.MysticsRisky2UtilsOrbEffectOnArrivalDefaults>();
                 onArrivalDefaults.orbEffect = orbEffect;
-                onArrivalDefaults.transformsToUnparentChildren = new Transform[] {
-                    snowRingOrbEffectPrefab.transform.Find("Origin/Unparent")
-                };
-                onArrivalDefaults.componentsToEnable = new MonoBehaviour[]
-                {
-                    destroyOnTimer
-                };
+                onArrivalDefaults.transformsToUnparentChildren = new Transform[] { snowRingOrbEffectPrefab.transform.Find("Origin/Unparent") };
+                onArrivalDefaults.componentsToEnable = new MonoBehaviour[] { destroyOnTimer };
                 MysticsItemsContent.Resources.effectPrefabs.Add(snowRingOrbEffectPrefab);
             }
         }
