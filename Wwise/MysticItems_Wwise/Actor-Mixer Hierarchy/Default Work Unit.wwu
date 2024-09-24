@@ -1329,9 +1329,6 @@
 						<Sound Name="38_wem" ID="{D7EEC214-F960-4ECA-A1A3-08C39255A78B}" ShortID="437867734">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>18</Value>
-									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
 											<Modifier Name="" ID="{BC404654-4127-4D0A-887D-A36A066910A6}"/>

@@ -183,13 +183,13 @@ namespace MysticsItems.Items
             public List<BuffType> buffOrder;
             public Dictionary<BuffType, int> buffStacks;
 
-            public Inventory inventory;
+            public Inventory[] inventory;
 
             public static Dictionary<Inventory, MysticsItemsManuscript> inventoryToBehaviourDict = new Dictionary<Inventory, MysticsItemsManuscript>();
             public static MysticsItemsManuscript GetForInventory(Inventory inventory)
             {
                 if (!inventoryToBehaviourDict.ContainsKey(inventory))
-                    inventory.gameObject.AddComponent<MysticsItemsManuscript>();
+                    return inventory.gameObject.AddComponent<MysticsItemsManuscript>();
                 return inventoryToBehaviourDict[inventory];
             }
 
@@ -200,8 +200,8 @@ namespace MysticsItems.Items
 
             public void Awake()
             {
-                inventory = GetComponent<Inventory>();
-                inventoryToBehaviourDict[inventory] = this;
+                inventory = GetComponents<Inventory>();
+                foreach (var i in inventory) inventoryToBehaviourDict[i] = this;
 
                 buffStacks = new Dictionary<BuffType, int>();
                 for (var i = 0; i < buffTypes.Count; i++) buffStacks.Add(buffTypes[i], 0);
@@ -314,7 +314,7 @@ namespace MysticsItems.Items
 
             public void OnDestroy()
             {
-                inventoryToBehaviourDict.Remove(inventory);
+                foreach (var i in inventory) inventoryToBehaviourDict.Remove(i);
             }
         }
     }
