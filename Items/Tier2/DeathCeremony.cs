@@ -299,7 +299,7 @@ namespace MysticsItems.Items
             }
             public static bool ExistsForBody(CharacterBody owner)
             {
-                return ownerToComponentDict.ContainsKey(owner);
+                return owner && ownerToComponentDict.ContainsKey(owner);
             }
 
             private float _markTimer = 0f;

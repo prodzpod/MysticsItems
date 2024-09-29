@@ -1,5 +1,7 @@
+#### 2.1.21:
+* deathceremony null fix
 #### 2.1.20:
-* this theoretically fixes lemurfusion incompat
+* this theoretically fixes lemurfusion incompat 
 #### 2.1.18:
 * mystic sword (item) orb vfx fix
 #### 2.1.17:
