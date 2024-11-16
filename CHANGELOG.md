@@ -1,3 +1,5 @@
+#### 2.1.22:
+* fun binary break on teleporterhelper (gate chalice)
 #### 2.1.21:
 * deathceremony null fix
 #### 2.1.20:
