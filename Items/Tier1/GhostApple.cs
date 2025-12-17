@@ -1,9 +1,6 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -83,7 +80,7 @@ namespace MysticsItems.Items
             Inventory inventory = sender.inventory;
             if (inventory)
             {
-                int itemCount = inventory.GetItemCount(itemDef);
+                int itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.baseRegenAdd += regen * itemCount * (1f + 0.2f * (sender.level - 1f));
@@ -98,7 +95,7 @@ namespace MysticsItems.Items
             MysticsItemsGhostAppleBehavior component = MysticsItemsGhostAppleBehavior.GetForMaster(self);
             if (!component.skipItemCheck)
             {
-                int itemCount = self.inventory.GetItemCount(itemDef);
+                int itemCount = self.inventory.GetItemCountEffective(itemDef);
                 var difference = itemCount - component.oldItemCount;
                 for (var i = 0; i < System.Math.Abs(difference); i++)
                 {
@@ -141,8 +138,7 @@ namespace MysticsItems.Items
                         {
                             var body = master.GetBody();
                             skipItemCheck = true;
-                            body.inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_GhostApple);
-                            body.inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_GhostAppleWeak);
+                            body.inventory.ReplaceItem(MysticsItemsContent.Items.MysticsItems_GhostApple.itemIndex, MysticsItemsContent.Items.MysticsItems_GhostAppleWeak.itemIndex);
                             skipItemCheck = false;
 
                             if (NetworkServer.active)

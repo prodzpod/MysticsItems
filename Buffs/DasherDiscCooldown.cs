@@ -7,7 +7,7 @@ namespace MysticsItems.Buffs
     {
         public override void OnLoad() {
             buffDef.name = "MysticsItems_DasherDiscCooldown";
-            buffDef.buffColor = UnityEngine.Color.white;
+            buffDef.buffColor = Color.white;
             buffDef.canStack = true;
             buffDef.isDebuff = false;
             buffDef.isCooldown = true;

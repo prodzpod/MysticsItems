@@ -1,4 +1,3 @@
-using BepInEx.Configuration;
 using MysticsRisky2Utils;
 using System;
 

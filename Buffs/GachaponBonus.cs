@@ -1,7 +1,5 @@
 using RoR2;
 using UnityEngine;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -66,7 +64,7 @@ namespace MysticsItems.Buffs
             if (sender.HasBuff(buffDef))
             {
                 var itemCount = 0;
-                if (sender.inventory) itemCount = sender.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_GachaponToken);
+                if (sender.inventory) itemCount = sender.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_GachaponToken);
                 if (itemCount > 0)
                 {
                     args.critAdd += (critBonus + critBonusPerStack * (float)(itemCount - 1)) * sender.GetBuffCount(buffDef);

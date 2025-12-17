@@ -2,10 +2,6 @@ using RoR2;
 using RoR2.Orbs;
 using R2API;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -120,7 +116,7 @@ namespace MysticsItems.Items
             {
                 if (!damageReport.victim) return;
                 PreDamageShield preDamageShield = damageReport.victim.GetComponent<PreDamageShield>();
-                if (damageReport.victimBody.inventory && damageReport.victimBody.inventory.GetItemCount(itemDef) > 0 && damageReport.victimBody.inventory.GetItemCount(RoR2Content.Items.InvadingDoppelganger) <= 0 && preDamageShield && preDamageShield.value > 0f)
+                if (damageReport.victimBody.inventory && damageReport.victimBody.inventory.GetItemCountEffective(itemDef) > 0 && damageReport.victimBody.inventory.GetItemCountEffective(RoR2Content.Items.InvadingDoppelganger) <= 0 && preDamageShield && preDamageShield.value > 0f)
                 {
                     BullseyeSearch search = new BullseyeSearch
                     {
@@ -141,7 +137,7 @@ namespace MysticsItems.Items
                         LightningOrb lightningOrb = new LightningOrb
                         {
                             origin = damageReport.victimBody.corePosition,
-                            damageValue = damageReport.damageDealt * (damage / 100f + damagePerStack / 100f * (damageReport.victimBody.inventory.GetItemCount(itemDef) - 1)),
+                            damageValue = damageReport.damageDealt * (damage / 100f + damagePerStack / 100f * (damageReport.victimBody.inventory.GetItemCountEffective(itemDef) - 1)),
                             isCrit = crit,
                             bouncesRemaining = 0,
                             teamIndex = damageReport.victimTeamIndex,
@@ -162,7 +158,7 @@ namespace MysticsItems.Items
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)
         {
-            if (sender.inventory && sender.inventory.GetItemCount(itemDef) > 0)
+            if (sender.inventory && sender.inventory.GetItemCountEffective(itemDef) > 0)
             {
                 args.baseShieldAdd += sender.maxHealth * sender.cursePenalty * passiveShield / 100f;
             }

@@ -1,9 +1,5 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -92,7 +88,7 @@ namespace MysticsItems.Items
             {
                 if (victimInfo.inventory && victimInfo.master)
                 {
-                    int itemCount = victimInfo.inventory.GetItemCount(itemDef);
+                    int itemCount = victimInfo.inventory.GetItemCountEffective(itemDef);
                     if (itemCount > 0)
                     {
                         MysticsItemsLimitedArmorBehavior component = MysticsItemsLimitedArmorBehavior.GetForMaster(victimInfo.master);
@@ -120,9 +116,8 @@ namespace MysticsItems.Items
                                     if (inventory)
                                     {
                                         component.skipItemCheck = true;
-                                        inventory.RemoveItem(itemDef);
+                                        inventory.ReplaceItem(itemDef.itemIndex, MysticsItemsContent.Items.MysticsItems_LimitedArmorBroken.itemIndex);
                                         component.skipItemCheck = false;
-                                        inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_LimitedArmorBroken);
 
                                         CharacterMasterNotificationQueue.PushItemTransformNotification(
                                             damageReport.victimMaster,
@@ -147,7 +142,7 @@ namespace MysticsItems.Items
             Inventory inventory = sender.inventory;
             if (inventory)
             {
-                int itemCount = inventory.GetItemCount(itemDef);
+                int itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.armorAdd += armor;
@@ -163,7 +158,7 @@ namespace MysticsItems.Items
             if (!component) component = self.gameObject.AddComponent<MysticsItemsLimitedArmorBehavior>();
             if (!component.skipItemCheck)
             {
-                int itemCount = self.inventory.GetItemCount(itemDef);
+                int itemCount = self.inventory.GetItemCountEffective(itemDef);
                 var difference = itemCount - component.oldItemCount;
                 for (var i = 0; i < difference; i++)
                 {
@@ -206,7 +201,7 @@ namespace MysticsItems.Items
 
             public void AddStock()
             {
-                stockHolders.Add(LimitedArmor.hits);
+                stockHolders.Add(hits);
             }
 
             public void RemoveStock()

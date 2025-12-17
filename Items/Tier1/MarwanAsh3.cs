@@ -1,10 +1,7 @@
 using RoR2;
 using UnityEngine;
-using Rewired.ComponentControls.Effects;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
-using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
 {

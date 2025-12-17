@@ -16,11 +16,9 @@
 
   <ItemGroup>
 	  <PackageReference Include="BepInEx.Core" Version="5.*" />
+	  <PackageReference Include="MMHOOK.RoR2" Version="2025.12.9" />
 	  <PackageReference Include="RiskOfRain2.GameLibs" Version="*-*" />
 	  <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" />
-	  <PackageReference Include="MMHOOK.RoR2" Version="2024.9.5">
-		  <NoWarn>NU1701</NoWarn>
-	  </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -113,9 +111,6 @@
     </Reference>
     <Reference Include="R2API.Unlockable">
       <HintPath>..\libs\R2API.Unlockable-nstrip.dll</HintPath>
-    </Reference>
-    <Reference Include="TILER2">
-      <HintPath>..\libs\TILER2-nstrip.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>..\libs\Unity.Postprocessing.Runtime-nstrip.dll</HintPath>

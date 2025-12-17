@@ -1,5 +1,3 @@
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils.BaseAssetTypes;
 using RoR2;
 using UnityEngine;
@@ -23,7 +21,7 @@ namespace MysticsItems.Buffs
 
         public override void OnLoad() {
             buffDef.name = "MysticsItems_DasherDiscActive";
-            buffDef.buffColor = UnityEngine.Color.white;
+            buffDef.buffColor = Color.white;
             buffDef.iconSprite = Main.AssetBundle.LoadAsset<Sprite>("Assets/Buffs/DasherDiscActive.png");
 
             GenericGameEvents.BeforeTakeDamage += GenericGameEvents_BeforeTakeDamage;

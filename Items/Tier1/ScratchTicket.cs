@@ -1,9 +1,5 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -99,7 +95,7 @@ namespace MysticsItems.Items
                     Inventory inventory = effectOriginMaster.inventory;
                     if (inventory)
                     {
-                        int itemCount = inventory.GetItemCount(itemDef);
+                        int itemCount = inventory.GetItemCountEffective(itemDef);
                         if (itemCount > 0) percentChance = ApplyPercentBonus(itemCount, percentChance);
                     }
                 }

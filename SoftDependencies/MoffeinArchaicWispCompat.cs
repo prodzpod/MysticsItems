@@ -11,7 +11,7 @@ namespace MysticsItems.SoftDependencies
 
         private static void ReplaceArchaicMaskSpawnCard()
         {
-            MysticsItems.Equipment.ArchaicMask.ArchWispSpawnCard = (CharacterSpawnCard)ArchaicWisp.ArchaicWispContent.ArchaicWispCard.Card.spawnCard;
+            Equipment.ArchaicMask.ArchWispSpawnCard = (CharacterSpawnCard)ArchaicWisp.ArchaicWispContent.ArchaicWispCard.Card.spawnCard;
         }
     }
 }

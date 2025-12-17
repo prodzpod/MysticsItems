@@ -1,11 +1,7 @@
 using RoR2;
-using RoR2.UI;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Networking;
-using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
 using System.Collections.Generic;
 using System.Linq;
@@ -239,7 +235,7 @@ namespace MysticsItems.Items
                 if (!component)
                 {
                     component = self.gameObject.AddComponent<MysticsItemsCrystalWorldTeleporterEffect>();
-                    switch (MysticsRisky2Utils.Utils.TrimCloneFromString(self.gameObject.name))
+                    switch (Utils.TrimCloneFromString(self.gameObject.name))
                     {
                         case "Teleporter1":
                             component.displayModel = true;
@@ -305,7 +301,7 @@ namespace MysticsItems.Items
             {
                 if (displayModel)
                 {
-                    model = Object.Instantiate(ballPrefab);
+                    model = Instantiate(ballPrefab);
                     model.transform.SetParent(transform);
                     model.transform.localPosition = Vector3.zero;
                     model.transform.localRotation = Quaternion.identity;
@@ -509,7 +505,7 @@ namespace MysticsItems.Items
 
             public void OnDestroy()
             {
-                Object.Destroy(projectionRenderTexture);
+                Destroy(projectionRenderTexture);
             }
         }
 
@@ -549,7 +545,7 @@ namespace MysticsItems.Items
                     WorldInfo worldInfo = worlds.ElementAt(index);
                     if (!worldInfo.currentObject)
                     {
-                        GameObject newWorld = Object.Instantiate(worldInfo.prefab, new Vector3(-9000f + index * -4000f, -14000f, 5000f), Quaternion.identity);
+                        GameObject newWorld = Instantiate(worldInfo.prefab, new Vector3(-9000f + index * -4000f, -14000f, 5000f), Quaternion.identity);
                         worldInfo.currentObject = newWorld;
                         worldInfo.cameraComponent = newWorld.transform.Find("CameraPivot").Find("Camera").gameObject.GetComponent<CrystalWorldCamera>();
                     }
@@ -584,7 +580,7 @@ namespace MysticsItems.Items
                     world.shownInContainers.Remove(gameObject);
                     if (world.shownInContainers.Count <= 0)
                     {
-                        Object.Destroy(world.currentObject);
+                        Destroy(world.currentObject);
                     }
                 }
             }

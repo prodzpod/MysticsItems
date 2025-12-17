@@ -58,13 +58,13 @@ namespace MysticsItems
                         {
                             var inventory = body.inventory;
 
-                            var itemCount = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_SpeedGivesDamage);
+                            var itemCount = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_SpeedGivesDamage);
                             if (itemCount > 0)
                             {
                                 particleColor = Color.Lerp(particleColor, nuclearTintColor, 0.3f);
                             }
 
-                            itemCount = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MysticSword);
+                            itemCount = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MysticSword);
                             if (itemCount > 0)
                             {
                                 particleColor = Color.Lerp(particleColor, mysticSwordTintColor, 0.3f);

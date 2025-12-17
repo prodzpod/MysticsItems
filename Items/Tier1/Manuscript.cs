@@ -1,9 +1,6 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using System.Collections.Generic;
 using MysticsRisky2Utils.BaseAssetTypes;
@@ -70,12 +67,15 @@ namespace MysticsItems.Items
             };
 
             On.RoR2.CharacterBody.OnInventoryChanged += CharacterBody_OnInventoryChanged;
-            On.RoR2.Inventory.GiveItem_ItemIndex_int += Inventory_GiveItem_ItemIndex_int;
-            On.RoR2.Inventory.RemoveItem_ItemIndex_int += Inventory_RemoveItem_ItemIndex_int;
+            On.RoR2.Inventory.GiveItemPermanent_ItemIndex_int += (orig, self, index, count) => { orig(self, index, count);  Inventory_GiveItem_ItemIndex_int(self, index, count);  };
+            On.RoR2.Inventory.GiveItemTemp += (orig, self, index, count) => { orig(self, index, count); Inventory_GiveItem_ItemIndex_int(self, index, (int)count); };
+            On.RoR2.Inventory.GiveItemChanneled += (orig, self, index, count) => { orig(self, index, count); Inventory_GiveItem_ItemIndex_int(self, index, count); };
+            On.RoR2.Inventory.RemoveItemPermanent_ItemIndex_int += (orig, self, index, count) => { orig(self, index, count); Inventory_RemoveItem_ItemIndex_int(self, index, count); };
+            On.RoR2.Inventory.RemoveItemTemp += (orig, self, index, count) => { orig(self, index, count); Inventory_RemoveItem_ItemIndex_int(self, index, (int)count);  };
 
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
 
-            if (!SoftDependencies.SoftDependenciesCore.itemStatsEnabled) On.RoR2.UI.ItemIcon.SetItemIndex += ItemIcon_SetItemIndex;
+            if (!SoftDependencies.SoftDependenciesCore.itemStatsEnabled) On.RoR2.UI.ItemIcon.SetItemIndex_ItemIndex_int_float += ItemIcon_SetItemIndex;
 
             MysticsItemsManuscript.Init();
         }
@@ -89,9 +89,9 @@ namespace MysticsItems.Items
             }
         }
 
-        private void ItemIcon_SetItemIndex(On.RoR2.UI.ItemIcon.orig_SetItemIndex orig, RoR2.UI.ItemIcon self, ItemIndex newItemIndex, int newItemCount)
+        private void ItemIcon_SetItemIndex(On.RoR2.UI.ItemIcon.orig_SetItemIndex_ItemIndex_int_float orig, RoR2.UI.ItemIcon self, ItemIndex newItemIndex, int newItemCount, float newDurationPercent)
         {
-            orig(self, newItemIndex, newItemCount);
+            orig(self, newItemIndex, newItemCount, newDurationPercent);
 
             if (newItemIndex == itemDef.itemIndex)
             {
@@ -151,19 +151,17 @@ namespace MysticsItems.Items
             }
         }
 
-        public void Inventory_GiveItem_ItemIndex_int(On.RoR2.Inventory.orig_GiveItem_ItemIndex_int orig, Inventory self, ItemIndex itemIndex, int count)
+        public void Inventory_GiveItem_ItemIndex_int(Inventory self, ItemIndex itemIndex, int count)
         {
             MysticsItemsManuscript component = MysticsItemsManuscript.GetForInventory(self);
             if (!component) component = self.gameObject.AddComponent<MysticsItemsManuscript>();
-            orig(self, itemIndex, count);
             if (NetworkServer.active && itemIndex == itemDef.itemIndex) for (var i = 0; i < count; i++) component.AddBuff();
         }
 
-        public void Inventory_RemoveItem_ItemIndex_int(On.RoR2.Inventory.orig_RemoveItem_ItemIndex_int orig, Inventory self, ItemIndex itemIndex, int count)
+        public void Inventory_RemoveItem_ItemIndex_int(Inventory self, ItemIndex itemIndex, int count)
         {
             MysticsItemsManuscript component = MysticsItemsManuscript.GetForInventory(self);
             if (!component) component = self.gameObject.AddComponent<MysticsItemsManuscript>();
-            orig(self, itemIndex, count);
             if (NetworkServer.active && itemIndex == itemDef.itemIndex) for (var i = 0; i < count; i++) component.RemoveBuff();
         }
 

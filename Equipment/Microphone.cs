@@ -1,12 +1,8 @@
 using RoR2;
 using RoR2.Projectile;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Reflection;
 using System.Collections.Generic;
 using RoR2.Audio;
 using MysticsRisky2Utils;
@@ -88,7 +84,7 @@ namespace MysticsItems.Equipment
             wavePrefab = Main.AssetBundle.LoadAsset<GameObject>("Assets/Equipment/Microphone/MicrophoneSoundwaveGhost.prefab");
             wavePrefab.AddComponent<ProjectileGhostController>();
 
-            MysticsRisky2Utils.Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Equipment/Microphone/MicrophoneSoundwave.prefab"), waveProjectile);
+            Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Equipment/Microphone/MicrophoneSoundwave.prefab"), waveProjectile);
             MicrophoneSoundwaveProjectile msp = waveProjectile.AddComponent<MicrophoneSoundwaveProjectile>();
             msp.colorCurve = new AnimationCurve[]
             {
@@ -170,7 +166,7 @@ namespace MysticsItems.Equipment
                 EvaluateCurves();
                 if (stopwatch >= lifetime)
                 {
-                    Object.Destroy(gameObject);
+                    Destroy(gameObject);
                 }
             }
 

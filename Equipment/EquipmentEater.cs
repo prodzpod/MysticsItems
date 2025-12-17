@@ -1,10 +1,7 @@
 using RoR2;
 using RoR2.DirectionalSearch;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.Collections.Generic;
 using System.Linq;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;

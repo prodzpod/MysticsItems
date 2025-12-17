@@ -1,6 +1,5 @@
 using RoR2;
 using System.Collections.Generic;
-using System.Linq;
 using HG;
 using UnityEngine;
 using MysticsRisky2Utils;
@@ -26,13 +25,13 @@ namespace MysticsItems
                         ItemIndex itemCount = (ItemIndex)ItemCatalog.itemCount;
                         while (itemIndex < itemCount)
                         {
-                            int thisItemCount = inventory.GetItemCount(itemIndex);
+                            int thisItemCount = inventory.GetItemCountEffective(itemIndex);
                             if (thisItemCount > 0)
                             {
                                 ItemDef itemDef = ItemCatalog.GetItemDef(itemIndex);
                                 if (itemDef.canRemove)
                                 {
-                                    totalItemCount += inventory.GetItemCount(itemIndex);
+                                    totalItemCount += inventory.GetItemCountEffective(itemIndex);
                                 }
                             }
                             itemIndex++;
@@ -44,7 +43,7 @@ namespace MysticsItems
                 }
                 return false;
             };
-            costType_ItemFraction.payCost = delegate (CostTypeDef costTypeDef2, CostTypeDef.PayCostContext context)
+            costType_ItemFraction.payCost = delegate (CostTypeDef.PayCostContext context, CostTypeDef.PayCostResults result)
             {
                 if (context.activatorBody)
                 {
@@ -60,7 +59,7 @@ namespace MysticsItems
                         {
                             if (itemIndex != context.avoidedItemIndex)
                             {
-                                int itemCount = inventory.GetItemCount(itemIndex);
+                                int itemCount = inventory.GetItemCountEffective(itemIndex);
                                 if (itemCount > 0)
                                 {
                                     ItemDef itemDef = ItemCatalog.GetItemDef(itemIndex);
@@ -86,7 +85,7 @@ namespace MysticsItems
                         {
                             ItemIndex itemIndex2 = itemsToTake[j];
                             context.results.itemsTaken.Add(itemIndex2);
-                            inventory.RemoveItem(itemIndex2, 1);
+                            inventory.ReplaceItem(itemIndex2, ItemIndex.None);
                         }
                         CollectionPool<ItemIndex, List<ItemIndex>>.ReturnCollection(itemsToTake);
                     }

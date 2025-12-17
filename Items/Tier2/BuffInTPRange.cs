@@ -2,14 +2,9 @@ using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using System.Collections.Generic;
-using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
-using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
 {
@@ -60,18 +55,18 @@ namespace MysticsItems.Items
 
             // body
             mat = renderer.sharedMaterials[0];
-            MysticsRisky2Utils.HopooShaderToMaterial.Standard.Apply(mat);
-            MysticsRisky2Utils.HopooShaderToMaterial.Standard.Gloss(mat, 0.6f, 5f);
+            HopooShaderToMaterial.Standard.Apply(mat);
+            HopooShaderToMaterial.Standard.Gloss(mat, 0.6f, 5f);
 
             // metal
             mat = renderer.sharedMaterials[1];
-            MysticsRisky2Utils.HopooShaderToMaterial.Standard.Apply(mat);
-            MysticsRisky2Utils.HopooShaderToMaterial.Standard.Gloss(mat, 1f, 14f);
+            HopooShaderToMaterial.Standard.Apply(mat);
+            HopooShaderToMaterial.Standard.Gloss(mat, 1f, 14f);
 
             // emission
             mat = renderer.sharedMaterials[2];
-            MysticsRisky2Utils.HopooShaderToMaterial.Standard.Apply(mat);
-            MysticsRisky2Utils.HopooShaderToMaterial.Standard.Emission(mat, 1f, new Color32(136, 175, 232, 255));
+            HopooShaderToMaterial.Standard.Apply(mat);
+            HopooShaderToMaterial.Standard.Emission(mat, 1f, new Color32(136, 175, 232, 255));
 
             On.RoR2.CharacterBody.OnInventoryChanged += CharacterBody_OnInventoryChanged;
         }
@@ -79,7 +74,7 @@ namespace MysticsItems.Items
         private void CharacterBody_OnInventoryChanged(On.RoR2.CharacterBody.orig_OnInventoryChanged orig, CharacterBody self)
         {
             orig(self);
-            self.AddItemBehavior<MysticsItemsBuffInTPRangeBehaviour>(self.inventory.GetItemCount(itemDef));
+            self.AddItemBehavior<MysticsItemsBuffInTPRangeBehaviour>(self.inventory.GetItemCountEffective(itemDef));
         }
 
         public class MysticsItemsBuffInTPRangeItemDisplayHelper : MonoBehaviour

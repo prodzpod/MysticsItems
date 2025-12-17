@@ -63,7 +63,7 @@ namespace MysticsItems.Buffs
             if (sender.HasBuff(buffDef))
             {
                 var itemCount = 0;
-                if (sender.inventory) itemCount = sender.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_BuffInTPRange);
+                if (sender.inventory) itemCount = sender.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_BuffInTPRange);
                 args.moveSpeedMultAdd += moveSpeed / 100f + moveSpeedPerStack / 100f * (float)(itemCount - 1);
                 args.armorAdd += armor + armorPerStack * (float)(itemCount - 1);
             }

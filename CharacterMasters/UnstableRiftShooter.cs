@@ -1,7 +1,5 @@
 using RoR2;
-using RoR2.CharacterAI;
 using MysticsRisky2Utils;
-using UnityEngine;
 using MysticsRisky2Utils.BaseAssetTypes;
 
 namespace MysticsItems.CharacterMasters

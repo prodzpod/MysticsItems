@@ -1,7 +1,5 @@
 using RoR2;
 using UnityEngine;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -44,7 +42,7 @@ namespace MysticsItems.Buffs
             if (sender.HasBuff(buffDef))
             {
                 var itemCount = 0;
-                if (sender.inventory) itemCount = sender.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_StarBook);
+                if (sender.inventory) itemCount = sender.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_StarBook);
                 if (itemCount > 0)
                 {
                     args.attackSpeedMultAdd += (attackSpeed + attackSpeedPerStack * (float)(itemCount - 1)) / 100f * sender.GetBuffCount(buffDef);

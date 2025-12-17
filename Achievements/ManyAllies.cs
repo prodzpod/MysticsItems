@@ -1,11 +1,10 @@
 using RoR2;
 using RoR2.Achievements;
-using UnityEngine;
 using System.Linq;
 
 namespace MysticsItems.Achievements
 {
-	[RegisterAchievement("MysticsItems_ManyAllies", "Items.MysticsItems_BuffInTPRange", null, 3, typeof(Server))]
+    [RegisterAchievement("MysticsItems_ManyAllies", "Items.MysticsItems_BuffInTPRange", null, 3, typeof(Server))]
 	public class ManyAllies : BaseAchievement
 	{
 		public override void OnInstall()

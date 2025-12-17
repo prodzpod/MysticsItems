@@ -1,8 +1,5 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using Rewired.ComponentControls.Effects;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;

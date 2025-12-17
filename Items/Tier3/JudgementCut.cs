@@ -1,16 +1,11 @@
 using RoR2;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using System.Linq;
-using System.Reflection;
-using System.Collections.Generic;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API.Networking.Interfaces;
-using R2API.Networking;
 using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
@@ -193,7 +188,7 @@ namespace MysticsItems.Items
             var inventory = sender.inventory;
             if (inventory)
             {
-                var itemCount = inventory.GetItemCount(itemDef);
+                var itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0) args.critAdd += baseCrit * (ConfigManager.General.initialCritStacking ? itemCount : 1f);
             }
         }
@@ -202,7 +197,7 @@ namespace MysticsItems.Items
         {
             if (damageInfo.crit && !damageInfo.procChainMask.HasProc(ProcType.Behemoth) && damageInfo.procCoefficient > 0f && attackerInfo.inventory && attackerInfo.body && attackerInfo.body.inputBank)
             {
-                var itemCount = attackerInfo.inventory.GetItemCount(itemDef);
+                var itemCount = attackerInfo.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     var component = attackerInfo.body.GetComponent<MysticsItemsJudgementCutCounter>();
@@ -268,7 +263,7 @@ namespace MysticsItems.Items
                         timer -= maxTimer;
                         ammo--;
                         if (ammo <= 0)
-                            UnityEngine.Object.Destroy(gameObject);
+                            Destroy(gameObject);
                     }
                 }
             }
@@ -369,7 +364,7 @@ namespace MysticsItems.Items
                         if (renderer && materialInstance)
                         {
                             var materials = renderer.materials;
-                            var index = System.Array.IndexOf(materials, materialInstance);
+                            var index = Array.IndexOf(materials, materialInstance);
                             if (index != -1)
                             {
                                 HG.ArrayUtils.ArrayRemoveAtAndResize(ref materials, index);

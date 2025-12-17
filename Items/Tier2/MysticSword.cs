@@ -194,7 +194,7 @@ namespace MysticsItems.Items
             GlobalEventManager.onCharacterDeathGlobal += GlobalEventManager_onCharacterDeathGlobal;
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
 
-            if (!SoftDependencies.SoftDependenciesCore.itemStatsEnabled) On.RoR2.UI.ItemIcon.SetItemIndex += ItemIcon_SetItemIndex;
+            if (!SoftDependencies.SoftDependenciesCore.itemStatsEnabled) On.RoR2.UI.ItemIcon.SetItemIndex_ItemIndex_int_float += ItemIcon_SetItemIndex;
 
             // GenericGameEvents.BeforeTakeDamage += GenericGameEvents_BeforeTakeDamage;
 
@@ -209,16 +209,16 @@ namespace MysticsItems.Items
 
         private void GenericGameEvents_BeforeTakeDamage(DamageInfo damageInfo, MysticsRisky2UtilsPlugin.GenericCharacterInfo attackerInfo, MysticsRisky2UtilsPlugin.GenericCharacterInfo victimInfo)
         {
-            if (attackerInfo.inventory && attackerInfo.inventory.GetItemCount(itemDef) > 0)
+            if (attackerInfo.inventory && attackerInfo.inventory.GetItemCountEffective(itemDef) > 0)
             {
                 if (damageInfo.damageColorIndex == DamageColorIndex.Default)
                     damageInfo.damageColorIndex = damageColorIndex;
             }
         }
 
-        private void ItemIcon_SetItemIndex(On.RoR2.UI.ItemIcon.orig_SetItemIndex orig, RoR2.UI.ItemIcon self, ItemIndex newItemIndex, int newItemCount)
+        private void ItemIcon_SetItemIndex(On.RoR2.UI.ItemIcon.orig_SetItemIndex_ItemIndex_int_float orig, RoR2.UI.ItemIcon self, ItemIndex newItemIndex, int newItemCount, float newDurationPercent)
         {
-            orig(self, newItemIndex, newItemCount);
+            orig(self, newItemIndex, newItemCount, newDurationPercent);
 
             if (newItemIndex == itemDef.itemIndex)
             {
@@ -260,7 +260,7 @@ namespace MysticsItems.Items
         {
             if (sender.inventory)
             {
-                var itemCount = sender.inventory.GetItemCount(itemDef);
+                var itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     var component = sender.inventory.GetComponent<MysticsItemsMysticSwordBehaviour>();
@@ -277,7 +277,7 @@ namespace MysticsItems.Items
             {
                 var healthMultiplier = 1f;
                 if (damageReport.victimBody.inventory)
-                    healthMultiplier += damageReport.victimBody.inventory.GetItemCount(RoR2Content.Items.BoostHp) * 0.1f;
+                    healthMultiplier += damageReport.victimBody.inventory.GetItemCountEffective(RoR2Content.Items.BoostHp) * 0.1f;
                 var strongEnemy = (damageReport.victimBody.baseMaxHealth * healthMultiplier) >= healthThreshold;
                 if (strongEnemy)
                 {
@@ -291,7 +291,7 @@ namespace MysticsItems.Items
                             var inventory = teamMemberBody.inventory;
                             if (inventory)
                             {
-                                int itemCount = inventory.GetItemCount(itemDef);
+                                int itemCount = inventory.GetItemCountEffective(itemDef);
                                 if (itemCount > 0)
                                 {
                                     var component = inventory.GetComponent<MysticsItemsMysticSwordBehaviour>();
@@ -316,8 +316,8 @@ namespace MysticsItems.Items
                             EffectData effectData = new EffectData
                             {
                                 origin = damageReport.victimBody.corePosition,
-                                genericFloat = UnityEngine.Random.Range(1.35f, 1.7f),
-                                scale = UnityEngine.Random.Range(0.02f, 0.2f)
+                                genericFloat = Random.Range(1.35f, 1.7f),
+                                scale = Random.Range(0.02f, 0.2f)
                             };
                             effectData.SetHurtBoxReference(RoR2Application.rng.NextElementUniform(onKillOrbTargets));
                             var effect = onKillOrbEffect.InstantiateClone("MysticSwordEffectReal");

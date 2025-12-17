@@ -1,15 +1,10 @@
 using RoR2;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using System;
-using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
 {

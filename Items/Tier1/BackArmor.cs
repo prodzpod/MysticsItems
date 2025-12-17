@@ -1,7 +1,5 @@
 using RoR2;
-using RoR2.Audio;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
@@ -145,7 +143,7 @@ namespace MysticsItems.Items
             {
                 if (victimInfo.inventory)
                 {
-                    int itemCount = victimInfo.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_BackArmor);
+                    int itemCount = victimInfo.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_BackArmor);
                     if (itemCount > 0)
                     {
                         float distance = Vector3.Distance(damageInfo.position, victimInfo.body.corePosition);

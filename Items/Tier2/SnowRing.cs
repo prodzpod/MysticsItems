@@ -1,14 +1,8 @@
 using RoR2;
 using UnityEngine;
-using UnityEngine.Networking;
 using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Collections.Generic;
-using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
@@ -242,8 +236,8 @@ namespace MysticsItems.Items
         {
             if (damageReport.damageDealt > 0 && damageReport.attackerBody && damageReport.attackerBody.mainHurtBox && damageReport.victimBody && damageReport.victimBody.inventory)
             {
-                var itemCount = damageReport.victimBody.inventory.GetItemCount(itemDef);
-                if (itemCount > 0 && damageReport.victimBody.inventory.GetItemCount(RoR2Content.Items.InvadingDoppelganger) <= 0 && Util.CheckRoll(chance, damageReport.victimMaster))
+                var itemCount = damageReport.victimBody.inventory.GetItemCountEffective(itemDef);
+                if (itemCount > 0 && damageReport.victimBody.inventory.GetItemCountEffective(RoR2Content.Items.InvadingDoppelganger) <= 0 && Util.CheckRoll(chance, damageReport.victimMaster))
                 {
                     var search = new BullseyeSearch();
                     search.searchOrigin = damageReport.victimBody.corePosition;

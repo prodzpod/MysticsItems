@@ -1,5 +1,4 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
 using System;
 using MysticsRisky2Utils;
@@ -89,7 +88,7 @@ namespace MysticsItems.Items
             Inventory inventory = self.inventory;
             if (inventory)
             {
-                var itemCount = inventory.GetItemCount(itemDef);
+                var itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     if (skill.finalRechargeInterval > 0f && skill.skillDef.stockToConsume > 0)

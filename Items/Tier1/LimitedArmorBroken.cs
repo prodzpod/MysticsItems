@@ -1,6 +1,5 @@
 using RoR2;
 using UnityEngine;
-using Rewired.ComponentControls.Effects;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -95,7 +94,7 @@ namespace MysticsItems.Items
             Inventory inventory = sender.inventory;
             if (inventory)
             {
-                int itemCount = inventory.GetItemCount(itemDef);
+                int itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.armorAdd += brokenArmor * itemCount;

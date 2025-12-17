@@ -4,8 +4,6 @@ using R2API;
 using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using R2API.Networking.Interfaces;
 using R2API.Networking;
 using MysticsRisky2Utils;
@@ -104,7 +102,7 @@ namespace MysticsItems.Items
                 orig(self);
                 self.onInventoryChanged += delegate ()
                 {
-                    if (NetworkServer.active) self.AddItemBehavior<MysticsItemsDasherDiscBehaviour>(self.inventory.GetItemCount(itemDef));
+                    if (NetworkServer.active) self.AddItemBehavior<MysticsItemsDasherDiscBehaviour>(self.inventory.GetItemCountEffective(itemDef));
                 };
             };
         }
@@ -134,7 +132,7 @@ namespace MysticsItems.Items
             {
                 if (NetworkServer.active)
                 {
-                    controller = Object.Instantiate(controllerPrefab, body.corePosition, Quaternion.identity);
+                    controller = Instantiate(controllerPrefab, body.corePosition, Quaternion.identity);
                     controller.GetComponent<GenericOwnership>().ownerObject = gameObject;
                     controller.GetComponent<NetworkedBodyAttachment>().AttachToGameObjectAndSpawn(gameObject);
                 }
@@ -144,7 +142,7 @@ namespace MysticsItems.Items
             {
                 if (NetworkServer.active)
                 {
-                    if (controller) Object.Destroy(controller);
+                    if (controller) Destroy(controller);
                     if (body)
                     {
                         while (body.HasBuff(MysticsItemsContent.Buffs.MysticsItems_DasherDiscActive)) body.RemoveBuff(MysticsItemsContent.Buffs.MysticsItems_DasherDiscActive);
@@ -331,7 +329,7 @@ namespace MysticsItems.Items
                             }
                         }
 
-                        if (NetworkServer.active) controller.body.AddTimedBuff(MysticsItemsContent.Buffs.MysticsItems_DasherDiscActive, DasherDisc.duration);
+                        if (NetworkServer.active) controller.body.AddTimedBuff(MysticsItemsContent.Buffs.MysticsItems_DasherDiscActive, duration);
                     }
                 }
 
@@ -369,7 +367,7 @@ namespace MysticsItems.Items
                         if (NetworkServer.active)
                         {
                             Inventory inventory = controller.body.inventory;
-                            float cooldown = CalculateCooldown(inventory ? inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_DasherDisc) : 1);
+                            float cooldown = CalculateCooldown(inventory ? inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_DasherDisc) : 1);
                             int cooldownSeconds = Mathf.CeilToInt(cooldown);
                             for (int i = 0; i < cooldownSeconds; i++)
                             {

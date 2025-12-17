@@ -1,13 +1,9 @@
 using RoR2;
-using RoR2.Hologram;
 using RoR2.Networking;
-using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.Events;
 using System.Collections.Generic;
-using System.Linq;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 
@@ -20,7 +16,7 @@ namespace MysticsItems.Interactables
         public override void OnPluginAwake()
         {
             base.OnPluginAwake();
-            prefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_ShrineLegendary", true);
+            prefab = Utils.CreateBlankPrefab("MysticsItems_ShrineLegendary", true);
             prefab.AddComponent<NetworkTransform>();
         }
 
@@ -28,7 +24,7 @@ namespace MysticsItems.Interactables
         {
             base.OnLoad();
 
-            MysticsRisky2Utils.Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Interactables/Shrine of the Legend/ShrineLegendary.prefab"), prefab, true);
+            Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Interactables/Shrine of the Legend/ShrineLegendary.prefab"), prefab, true);
 
             modelBaseTransform = prefab.transform.Find("Base");
             modelTransform = prefab.transform.Find("Base/mdlShrineLegendary");
@@ -193,11 +189,12 @@ namespace MysticsItems.Interactables
                 CharacterBody component = interactor.GetComponent<CharacterBody>();
 
                 int addReds = 0;
-                int[] itemStacks = component.inventory.itemStacks;
-                for (int i = 0; i < itemStacks.Length; i++)
+                var itemStacks = component.inventory.effectiveItemStacks;
+                for (int i = 0; i < ItemCatalog.itemCount; i++)
                 {
                     ItemIndex itemIndex = (ItemIndex)i;
-                    if (itemStacks[i] > 0)
+                    var count = itemStacks.GetStackValue(itemIndex);
+                    if (count > 0)
                     {
                         switch (ItemCatalog.GetItemDef(itemIndex).tier)
                         {
@@ -205,9 +202,9 @@ namespace MysticsItems.Interactables
                             case ItemTier.Tier2:
                             case ItemTier.Lunar:
                             case ItemTier.Boss:
-                                addReds += itemStacks[i];
+                                addReds += count;
                                 component.inventory.itemAcquisitionOrder.Remove(itemIndex);
-                                component.inventory.ResetItem(itemIndex);
+                                component.inventory.ResetItemPermanent(itemIndex);
                                 break;
                         }
                     }

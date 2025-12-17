@@ -2,7 +2,6 @@
 using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using MysticsRisky2Utils;
@@ -75,7 +74,7 @@ namespace MysticsItems.Items
 
         public override void OnPluginAwake()
         {
-            gunpowderPickup = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_ExplosivePack", true);
+            gunpowderPickup = Utils.CreateBlankPrefab("MysticsItems_ExplosivePack", true);
         }
 
         public override void OnLoad()
@@ -121,7 +120,7 @@ namespace MysticsItems.Items
                 AddDisplayRule("VoidSurvivorBody", "Neck", new Vector3(0.08624F, 0.00251F, 0.20226F), new Vector3(23.68506F, 25.82453F, 8.87328F), new Vector3(0.062F, 0.062F, 0.062F));
             };
 
-            MysticsRisky2Utils.Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Contraband Gunpowder/ExplosivePack.prefab"), gunpowderPickup);
+            Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Contraband Gunpowder/ExplosivePack.prefab"), gunpowderPickup);
             gunpowderPickup.transform.localScale *= 0.33f;
             
             gunpowderPickup.layer = LayerIndex.debris.intVal;
@@ -263,7 +262,7 @@ namespace MysticsItems.Items
             {
                 if (NetworkServer.active)
                 {
-                    if (attackerInfo.inventory && attackerInfo.inventory.GetItemCount(itemIndex) > 0)
+                    if (attackerInfo.inventory && attackerInfo.inventory.GetItemCountEffective(itemIndex) > 0)
                     {
                         if (Util.CheckRoll(7f, attackerInfo.master))
                         {
@@ -278,7 +277,7 @@ namespace MysticsItems.Items
             On.RoR2.CharacterBody.HandleOnKillEffectsServer += (orig, self, damageReport) =>
             {
                 orig(self, damageReport);
-                if (self.inventory && self.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0 && self.master && Util.CheckRoll(flaskDropChance, self.master))
+                if (self.inventory && self.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0 && self.master && Util.CheckRoll(flaskDropChance, self.master))
                 {
                     GameObject gameObject = Object.Instantiate(gunpowderPickup, Util.GetCorePosition(damageReport.victim.gameObject), Quaternion.Euler(Random.onUnitSphere.normalized));
                     gameObject.GetComponent<TeamFilter>().teamIndex = TeamComponent.GetObjectTeam(self.gameObject);
@@ -305,7 +304,7 @@ namespace MysticsItems.Items
                         if (body)
                         {
                             Inventory inventory = body.inventory;
-                            if (inventory && inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
+                            if (inventory && inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
                             {
                                 Explode(body);
                             }
@@ -333,7 +332,7 @@ namespace MysticsItems.Items
                         if (body)
                         {
                             Inventory inventory = body.inventory;
-                            if (inventory && inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
+                            if (inventory && inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
                             {
                                 Explode(body);
                             }
@@ -361,7 +360,7 @@ namespace MysticsItems.Items
                         if (body)
                         {
                             Inventory inventory = body.inventory;
-                            if (inventory && inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
+                            if (inventory && inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
                             {
                                 Explode(body);
                             }
@@ -389,7 +388,7 @@ namespace MysticsItems.Items
                         if (body)
                         {
                             Inventory inventory = body.inventory;
-                            if (inventory && inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
+                            if (inventory && inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ExplosivePickups) > 0)
                             {
                                 Explode(body);
                             }
@@ -402,7 +401,7 @@ namespace MysticsItems.Items
         public static void Explode(CharacterBody body)
         {
             if (body.inventory) {
-                int itemCount = body.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ExplosivePickups);
+                int itemCount = body.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ExplosivePickups);
                 if (itemCount > 0) Explode(body.gameObject, body.corePosition, body.damage * damage / 100f + damagePerStack / 100f * (float)(itemCount - 1), radius + radiusPerStack * (float)(itemCount - 1), body.RollCrit());
             }
         }
@@ -457,12 +456,13 @@ namespace MysticsItems.Items
                     CharacterBody body = collider.GetComponent<CharacterBody>();
                     if (body)
                     {
+                        body.OnPickup(CharacterBody.PickupClass.Minor);
                         Inventory inventory = body.inventory;
-                        if (inventory && inventory.GetItemCount(itemIndex) > 0)
+                        if (inventory && inventory.GetItemCountEffective(itemIndex) > 0)
                         {
                             Explode(body);
                             picked = true;
-                            Object.Destroy(baseObject);
+                            Destroy(baseObject);
                         }
                     }
                 }
@@ -499,7 +499,7 @@ namespace MysticsItems.Items
                     if (body)
                     {
                         Inventory inventory = body.inventory;
-                        if (inventory && inventory.GetItemCount(itemIndex) > 0)
+                        if (inventory && inventory.GetItemCountEffective(itemIndex) > 0)
                         {
                             gravitateTarget = other.gameObject.transform;
                         }

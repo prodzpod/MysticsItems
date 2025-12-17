@@ -1,8 +1,6 @@
 using RoR2;
 using RoR2.UI;
-using R2API.Utils;
 using UnityEngine;
-using System;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -100,7 +98,7 @@ namespace MysticsItems.Items
                 if (i < progressOverlaySteps)
                 {
                     
-                    matStep = Material.Instantiate(mainOverlay);
+                    matStep = UnityEngine.Object.Instantiate(mainOverlay);
                     matStep.name += "_Step" + i;
                     matStep.SetColor("_Color", matStep.GetColor("_Color") * step);
                     matStep.SetFloat("_OffsetMult", step);
@@ -111,7 +109,7 @@ namespace MysticsItems.Items
                 {
                     if (model.body && model.body.inventory && model.body.master)
                     {
-                        int itemCount = model.body.inventory.GetItemCount(itemDef);
+                        int itemCount = model.body.inventory.GetItemCountEffective(itemDef);
                         if (itemCount > 0)
                         {
                             var idolBonus = CalculateIdolBonus(model.body.master, itemCount);
@@ -150,12 +148,12 @@ namespace MysticsItems.Items
 
             idolHUDGlowingIcon = Main.AssetBundle.LoadAsset<Sprite>("Assets/Items/Idol/IconGlowing.png");
             idolHUDGlowingIconMaterial = Main.AssetBundle.LoadAsset<Material>("Assets/Items/Idol/matIdoHUDGlowingIcon.mat");
-            On.RoR2.UI.ItemIcon.SetItemIndex += ItemIcon_SetItemIndex;
+            On.RoR2.UI.ItemIcon.SetItemIndex_ItemIndex_int_float += ItemIcon_SetItemIndex;
         }
 
-        private void ItemIcon_SetItemIndex(On.RoR2.UI.ItemIcon.orig_SetItemIndex orig, ItemIcon self, ItemIndex newItemIndex, int newItemCount)
+        private void ItemIcon_SetItemIndex(On.RoR2.UI.ItemIcon.orig_SetItemIndex_ItemIndex_int_float orig, ItemIcon self, ItemIndex newItemIndex, int newItemCount, float newDurationPercent)
         {
-            orig(self, newItemIndex, newItemCount);
+            orig(self, newItemIndex, newItemCount, newDurationPercent);
             var shouldDisplay = newItemIndex == itemDef.itemIndex && newItemCount > 0;
             var fillIcon = self.GetComponent<MysticsItemsSuperIdolHUDIcon>();
             if (shouldDisplay != fillIcon)
@@ -253,7 +251,7 @@ namespace MysticsItems.Items
             orig(self, amount);
             if (NetworkServer.active)
             {
-                if (self.inventory && self.inventory.GetItemCount(itemDef) > 0)
+                if (self.inventory && self.inventory.GetItemCountEffective(itemDef) > 0)
                 {
                     var body = self.GetBody();
                     if (body)
@@ -289,7 +287,7 @@ namespace MysticsItems.Items
             {
                 CharacterMaster targetMaster = hudInstance.targetMaster;
                 Inventory inventory = targetMaster ? targetMaster.inventory : null;
-                int itemCount = inventory ? inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_Idol) : 0;
+                int itemCount = inventory ? inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_Idol) : 0;
 
                 var shouldDisplay = itemCount > 0;
 
@@ -373,7 +371,7 @@ namespace MysticsItems.Items
         {
             if (sender.inventory && sender.master)
             {
-                int itemCount = sender.inventory.GetItemCount(itemDef);
+                int itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     var idolBonus = CalculateIdolBonus(sender.master, itemCount);

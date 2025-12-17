@@ -1,7 +1,5 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using System;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -105,7 +103,7 @@ namespace MysticsItems.Items
         {
             if (!damageInfo.rejected && damageInfo.procCoefficient > 0f && attackerInfo.body && attackerInfo.inventory)
             {
-                var itemCount = attackerInfo.inventory.GetItemCount(itemDef);
+                var itemCount = attackerInfo.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     var component = attackerInfo.body.GetComponent<MysticsItemsVyraelCommandmentsHelper>();
@@ -134,7 +132,7 @@ namespace MysticsItems.Items
                                 procCoefficient = procCoefficient,
                                 rejected = false
                             };
-                            for (DamageAPI.ModdedDamageType i = 0; i < (DamageAPI.ModdedDamageType)DamageAPI.ModdedDamageTypeCount; i++)
+                            for (DamageAPI.ModdedDamageType i = (DamageAPI.ModdedDamageType)1; i < (DamageAPI.ModdedDamageType)DamageAPI.ModdedDamageTypeCount; i++)
                                 if (damageInfo.HasModdedDamageType(i))
                                     simulatedDamageInfo.AddModdedDamageType(i);
 

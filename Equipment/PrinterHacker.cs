@@ -1,11 +1,7 @@
 using RoR2;
 using RoR2.DirectionalSearch;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.Collections.Generic;
-using System.Linq;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -82,7 +78,7 @@ namespace MysticsItems.Equipment
             On.RoR2.PurchaseInteraction.Awake += (orig, self) =>
             {
                 orig(self);
-                string properName = MysticsRisky2Utils.Utils.TrimCloneFromString(self.name);
+                string properName = Utils.TrimCloneFromString(self.name);
                 if (properName == "Duplicator"
                 || properName == "DuplicatorLarge"
                 || properName == "DuplicatorWild"
@@ -149,7 +145,7 @@ namespace MysticsItems.Equipment
                     shopTerminalBehavior.SetHasBeenPurchased(true);
                     for (var i = 0; i < amount; i++)
                         PickupDropletController.CreatePickupDroplet(
-                            shopTerminalBehavior.pickupIndex,
+                            shopTerminalBehavior.pickup,
                             (shopTerminalBehavior.dropTransform ? shopTerminalBehavior.dropTransform : shopTerminalBehavior.transform).position,
                             shopTerminalBehavior.transform.TransformVector(shopTerminalBehavior.dropVelocity)
                         );

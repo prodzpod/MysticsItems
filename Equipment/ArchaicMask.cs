@@ -3,12 +3,7 @@ using R2API;
 using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Reflection;
 using System.Collections.Generic;
-using R2API.Networking.Interfaces;
-using R2API.Networking;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -82,8 +77,8 @@ namespace MysticsItems.Equipment
 
         public override void OnPluginAwake()
         {
-            unlockInteractablePrefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_ArchaicMaskUnlockInteractable", true);
-            forcedPickupPrefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_ArchaicMaskForcedPickup", true);
+            unlockInteractablePrefab = Utils.CreateBlankPrefab("MysticsItems_ArchaicMaskUnlockInteractable", true);
+            forcedPickupPrefab = Utils.CreateBlankPrefab("MysticsItems_ArchaicMaskForcedPickup", true);
         }
 
         public override void OnLoad()
@@ -106,7 +101,7 @@ namespace MysticsItems.Equipment
             );
             HopooShaderToMaterial.CloudRemap.Boost(matArchaicMaskFire, 0.5f);
             itemDisplayPrefab = PrepareItemDisplayModel(PrefabAPI.InstantiateClone(equipmentDef.pickupModelPrefab, equipmentDef.pickupModelPrefab.name + "Display", false));
-            MysticsRisky2Utils.Utils.CopyChildren(equipmentDef.pickupModelPrefab, unlockInteractablePrefab);
+            Utils.CopyChildren(equipmentDef.pickupModelPrefab, unlockInteractablePrefab);
 
             onSetupIDRS += () =>
             {
@@ -161,7 +156,7 @@ namespace MysticsItems.Equipment
             sphereCollider.isTrigger = true;
             entityLocatorHolder.AddComponent<EntityLocator>().entity = unlockInteractablePrefab;
 
-            MysticsRisky2Utils.Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Equipment/Archaic Mask/ForcedPickup.prefab"), forcedPickupPrefab);
+            Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Equipment/Archaic Mask/ForcedPickup.prefab"), forcedPickupPrefab);
             GenericPickupController genericPickupController = forcedPickupPrefab.AddComponent<GenericPickupController>();
             forcedPickupPrefab.AddComponent<Highlight>();
             PickupDisplay pickupDisplay = forcedPickupPrefab.transform.Find("PickupDisplay").gameObject.AddComponent<PickupDisplay>();
@@ -338,12 +333,12 @@ namespace MysticsItems.Equipment
                     inventory.SetEquipmentIndex(MysticsItemsContent.Equipment.MysticsItems_ArchaicMask.equipmentIndex);
                     typeof(GenericPickupController).InvokeMethod("SendPickupMessage", inventory.GetComponent<CharacterMaster>(), PickupCatalog.FindPickupIndex(MysticsItemsContent.Equipment.MysticsItems_ArchaicMask.equipmentIndex));
 
-                    GameObject forcedPickup = Object.Instantiate(forcedPickupPrefab, transform.position, transform.rotation);
+                    GameObject forcedPickup = Instantiate(forcedPickupPrefab, transform.position, transform.rotation);
                     forcedPickup.GetComponent<MysticsItemsArchaicMaskForcedPickup>().pickupIndex = PickupCatalog.FindPickupIndex(currentEquipmentIndex);
                     NetworkServer.Spawn(forcedPickup);
 
                     if (NetworkServer.active) NetworkServer.UnSpawn(gameObject);
-                    Object.Destroy(gameObject);
+                    Destroy(gameObject);
                 }
             }
 
@@ -450,7 +445,7 @@ namespace MysticsItems.Equipment
             {
                 if (NetworkServer.active)
                 {
-                    GetComponent<GenericPickupController>().NetworkpickupIndex = pickupIndex;
+                    GetComponent<GenericPickupController>()._pickupState.pickupIndex = pickupIndex;
                 }
             }
         }

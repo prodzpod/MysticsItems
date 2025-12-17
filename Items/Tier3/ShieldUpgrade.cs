@@ -1,11 +1,6 @@
 using RoR2;
-using RoR2.Orbs;
 using R2API;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -126,7 +121,7 @@ namespace MysticsItems.Items
         {
             if (sender.inventory)
             {
-                var itemCount = sender.inventory.GetItemCount(itemDef);
+                var itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0) {
                     args.baseShieldAdd += sender.maxHealth * sender.cursePenalty * (passiveShield + passiveShieldPerStack * (float)(itemCount - 1)) / 100f;
                     args.shieldMultAdd += (shieldBonus + shieldBonusPerStack * (float)(itemCount - 1)) / 100f;
@@ -137,7 +132,7 @@ namespace MysticsItems.Items
         private void CharacterBody_OnInventoryChanged(On.RoR2.CharacterBody.orig_OnInventoryChanged orig, CharacterBody self)
         {
             orig(self);
-            self.AddItemBehavior<MysticsItemsShieldUpgradeBehaviour>(self.inventory.GetItemCount(itemDef));
+            self.AddItemBehavior<MysticsItemsShieldUpgradeBehaviour>(self.inventory.GetItemCountEffective(itemDef));
         }
 
         public class MysticsItemsShieldUpgradeBehaviour : CharacterBody.ItemBehavior

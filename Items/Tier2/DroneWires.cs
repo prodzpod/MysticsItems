@@ -1,16 +1,9 @@
 using RoR2;
-using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using System;
 using System.Linq;
-using System.Reflection;
-using System.Collections.Generic;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API.Networking.Interfaces;
-using R2API.Networking;
 using static MysticsItems.LegacyBalanceConfigManager;
 using RoR2.Projectile;
 
@@ -142,7 +135,7 @@ namespace MysticsItems.Items
 
             On.RoR2.CharacterBody.OnInventoryChanged += CharacterBody_OnInventoryChanged;
 
-            MysticsRisky2Utils.Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Wires/SparkProjectile.prefab"), sparkProjectilePrefab);
+            Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Wires/SparkProjectile.prefab"), sparkProjectilePrefab);
             
             float sparkDuration = 4f;
 
@@ -195,14 +188,13 @@ namespace MysticsItems.Items
             orig(self);
             if (NetworkServer.active)
             {
-                var component = self.AddItemBehavior<MysticsItemsDroneWiresBehaviour>(self.inventory.GetItemCount(itemDef));
+                var component = self.AddItemBehavior<MysticsItemsDroneWiresBehaviour>(self.inventory.GetItemCountEffective(itemDef));
                 if (component && component.firstInit) component.UpdateDroneInventories();
             }
         }
 
         public class MysticsItemsDroneWiresBehaviour : CharacterBody.ItemBehavior
         {
-            public int oldStack = 0;
             public bool firstInit = false;
             public float timer = 0f;
             public float interval = droneFireInterval;
@@ -222,7 +214,7 @@ namespace MysticsItems.Items
                     interval = playerFireInterval;
                     sparksToFire = playerFireCount;
                 }
-                timer = UnityEngine.Random.value * interval;
+                timer = Random.value * interval;
                 UpdateDroneInventories();
                 MasterSummon.onServerMasterSummonGlobal += MasterSummon_onServerMasterSummonGlobal;
             }
@@ -234,22 +226,17 @@ namespace MysticsItems.Items
                     CharacterMaster summonMasterInstance = summonReport.summonMasterInstance;
                     if (summonMasterInstance)
                     {
-                        CharacterBody body = summonMasterInstance.GetBody();
-                        if (body && body.bodyFlags.HasFlag(CharacterBody.BodyFlags.Mechanical))
+                        CharacterBody body2 = summonMasterInstance.GetBody();
+                        if (body2 && body2.bodyFlags.HasFlag(CharacterBody.BodyFlags.Mechanical))
                         {
-                            summonMasterInstance.inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_DroneWires, stack);
+                            summonMasterInstance.inventory.GiveItemPermanent(MysticsItemsContent.Items.MysticsItems_DroneWires, body.inventory.GetItemCountPermanent(MysticsItemsContent.Items.MysticsItems_DroneWires));
+                            summonMasterInstance.inventory.GiveItemTemp(MysticsItemsContent.Items.MysticsItems_DroneWires.itemIndex, body.inventory.GetItemCountTemp(MysticsItemsContent.Items.MysticsItems_DroneWires));
                         }
                     }
                 }
             }
 
             public void UpdateDroneInventories()
-            {
-                UpdateDroneInventories(stack - oldStack);
-                oldStack = stack;
-            }
-
-            public void UpdateDroneInventories(int difference)
             {
                 var master = body.master;
                 if (master)
@@ -261,8 +248,8 @@ namespace MysticsItems.Items
                             var minionOwnership = otherBody.master.minionOwnership;
                             if (minionOwnership && minionOwnership.ownerMaster == master)
                             {
-                                if (difference > 0) otherBody.inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_DroneWires, difference);
-                                else if (difference < 0) otherBody.inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_DroneWires, -difference);
+                                otherBody.inventory.SetItemCountPermanent(MysticsItemsContent.Items.MysticsItems_DroneWires.itemIndex, body.healthComponent.alive ? body.inventory.GetItemCountPermanent(MysticsItemsContent.Items.MysticsItems_DroneWires.itemIndex) : 0);
+                                otherBody.inventory.SetItemCountTemp(MysticsItemsContent.Items.MysticsItems_DroneWires.itemIndex, body.healthComponent.alive ? stack - body.inventory.GetItemCountPermanent(MysticsItemsContent.Items.MysticsItems_DroneWires.itemIndex) : 0);
                             }
                         }
                     }
@@ -271,7 +258,7 @@ namespace MysticsItems.Items
 
             public void OnDestroy()
             {
-                UpdateDroneInventories(-stack);
+                UpdateDroneInventories();
                 MasterSummon.onServerMasterSummonGlobal -= MasterSummon_onServerMasterSummonGlobal;
             }
 
@@ -285,7 +272,7 @@ namespace MysticsItems.Items
                         timer = 0;
 
                         var crit = body.RollCrit();
-                        float initialAngle = UnityEngine.Random.value * 360f;
+                        float initialAngle = Random.value * 360f;
 
                         bool accurateShot = false;
                         RaycastHit accurateShotRaycast = default(RaycastHit);
@@ -298,13 +285,13 @@ namespace MysticsItems.Items
                         {
                             Vector3 fireOrigin = body.corePosition;
                             Vector3 direction = Vector3.up;
-                            direction = Quaternion.AngleAxis(UnityEngine.Random.value * coneAngle, Vector3.forward) * direction;
+                            direction = Quaternion.AngleAxis(Random.value * coneAngle, Vector3.forward) * direction;
                             direction = Quaternion.AngleAxis(initialAngle + 360f / sparksToFire * i, Vector3.up) * direction;
-                            float speed = UnityEngine.Random.Range(minSpeed, maxSpeed);
+                            float speed = Random.Range(minSpeed, maxSpeed);
 
                             if (accurateShot && i == 0)
                             {
-                                float accurateShotTime = UnityEngine.Random.Range(0.2f, 0.5f);
+                                float accurateShotTime = Random.Range(0.2f, 0.5f);
 
                                 var distance = accurateShotRaycast.point - fireOrigin;
                                 direction = new Vector3(

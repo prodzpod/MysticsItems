@@ -6,7 +6,6 @@ using R2API.Networking.Interfaces;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.Rendering;
 using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items

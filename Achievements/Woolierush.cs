@@ -1,12 +1,10 @@
 using RoR2;
 using RoR2.Achievements;
-using UnityEngine;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace MysticsItems.Achievements
 {
-	[RegisterAchievement("MysticsItems_Woolierush", "Items.MysticsItems_Rhythm", null, 3, typeof(Server))]
+    [RegisterAchievement("MysticsItems_Woolierush", "Items.MysticsItems_Rhythm", null, 3, typeof(Server))]
 	public class Woolierush : BaseAchievement
 	{
 		public override void OnInstall()

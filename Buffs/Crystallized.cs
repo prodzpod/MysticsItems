@@ -1,10 +1,7 @@
 using RoR2;
 using UnityEngine;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using RoR2.Skills;
-using System.Collections.Generic;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 

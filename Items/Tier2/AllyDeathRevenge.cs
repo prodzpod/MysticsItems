@@ -1,10 +1,6 @@
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Collections.Generic;
 using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
@@ -134,7 +130,7 @@ namespace MysticsItems.Items
                 {
                     if (teamMember.body && teamMember.body.inventory && teamMember.body != damageReport.victimBody)
                     {
-                        int itemCount = teamMember.body.inventory.GetItemCount(itemDef);
+                        int itemCount = teamMember.body.inventory.GetItemCountEffective(itemDef);
                         if (itemCount > 0)
                         {
                             var currentDuration = duration + durationPerStack * (itemCount - 1);

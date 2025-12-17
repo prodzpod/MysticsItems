@@ -59,7 +59,7 @@ namespace MysticsItems.Equipment
         public override void OnPluginAwake()
         {
             base.OnPluginAwake();
-            mechanicalArmControllerPrefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_MechanicalArmController", true);
+            mechanicalArmControllerPrefab = Utils.CreateBlankPrefab("MysticsItems_MechanicalArmController", true);
             mechanicalArmControllerPrefab.GetComponent<NetworkIdentity>().localPlayerAuthority = false;
         }
 
@@ -595,8 +595,8 @@ namespace MysticsItems.Equipment
                 public static float baseMeleeAttackDelay = 30f / 24f;
                 public static float baseAttackFireDuration = 0.1f;
                 public static string initialSoundString = "MysticsItems_Play_mechanicalArm_swing_prepare";
-                public static float damageCoefficient = MechanicalArm.damage.Value / 100f;
-                public static float damageCoefficientPerCharge = MechanicalArm.damageBonusPerCharge.Value / 100f;
+                public static float damageCoefficient = damage.Value / 100f;
+                public static float damageCoefficientPerCharge = damageBonusPerCharge.Value / 100f;
                 public static Vector3 forceVector = Vector3.zero;
                 public static float pushAwayForce = 6000f;
                 public static float procCoefficient = MechanicalArm.procCoefficient.Value;

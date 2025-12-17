@@ -1,11 +1,6 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Collections.Generic;
-using System.Linq;
 using R2API;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
@@ -147,7 +142,7 @@ namespace MysticsItems.Items
                     Inventory inventory = characterBody.inventory;
                     if (inventory)
                     {
-                        int itemCount = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_HealOrbOnBarrel);
+                        int itemCount = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_HealOrbOnBarrel);
                         if (itemCount > 0)
                         {
                             GameObject spawner = Object.Instantiate(delayedHealOrbSpawner, interactableObject.transform.position, interactableObject.transform.rotation);
@@ -212,7 +207,7 @@ namespace MysticsItems.Items
                     {
                         SpawnOrb(transform.position, transform.rotation, TeamComponent.GetObjectTeam(interactor.gameObject), itemCount);
                         consumed = true;
-                        Object.Destroy(this);
+                        Destroy(this);
                     }
                 }
             }

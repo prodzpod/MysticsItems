@@ -1,14 +1,8 @@
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Collections.Generic;
-using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
@@ -89,7 +83,7 @@ namespace MysticsItems.Items
         private void CharacterBody_OnInventoryChanged(On.RoR2.CharacterBody.orig_OnInventoryChanged orig, CharacterBody self)
         {
             orig(self);
-            self.AddItemBehavior<MysticsItemsNanomachinesBehaviour>(self.inventory.GetItemCount(itemDef));
+            self.AddItemBehavior<MysticsItemsNanomachinesBehaviour>(self.inventory.GetItemCountEffective(itemDef));
         }
 
         public class MysticsItemsNanomachinesBehaviour : CharacterBody.ItemBehavior

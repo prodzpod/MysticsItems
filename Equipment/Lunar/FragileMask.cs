@@ -282,7 +282,7 @@ namespace MysticsItems.Equipment
             {
                 var component = equipmentSlot.characterBody.GetComponent<MysticsItemsFragileMaskBehaviour>();
                 var inventory = equipmentSlot.characterBody.inventory;
-                var autoCast = inventory && inventory.GetItemCount(RoR2Content.Items.AutoCastEquipment) > 0;
+                var autoCast = inventory && inventory.GetItemCountEffective(RoR2Content.Items.AutoCastEquipment) > 0;
                 if (component)
                 {
                     if (component.maskActive && component.maskDisableDelay <= 0f && !autoCast)

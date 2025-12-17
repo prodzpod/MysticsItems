@@ -1,12 +1,6 @@
 using RoR2;
 using R2API;
 using UnityEngine;
-using UnityEngine.Networking;
-using System.Linq;
-using System.Reflection;
-using System.Collections;
-using System.Collections.Generic;
-using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using MonoMod.Cil;
@@ -141,7 +135,7 @@ namespace MysticsItems.Items
                     var newDamageMult = origDamageMult;
                     if (body.inventory && !alternate)
                     {
-                        int itemCount = body.inventory.GetItemCount(itemDef);
+                        int itemCount = body.inventory.GetItemCountEffective(itemDef);
                         if (itemCount > 0)
                         {
                             newDamageMult += CalculateDamageBonus(body, itemCount);
@@ -160,7 +154,7 @@ namespace MysticsItems.Items
         {
             if (sender.inventory)
             {
-                int itemCount = sender.inventory.GetItemCount(itemDef);
+                int itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.moveSpeedMultAdd += passiveSpeed / 100f;

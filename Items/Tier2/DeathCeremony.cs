@@ -204,7 +204,7 @@ namespace MysticsItems.Items
 
             GenericGameEvents.OnHitEnemy += GenericGameEvents_OnHitEnemy;
 
-            R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
+            RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
 
             Run.onRunStartGlobal += (x) =>
             {
@@ -237,7 +237,7 @@ namespace MysticsItems.Items
             var inventory = sender.inventory;
             if (inventory)
             {
-                var itemCount = inventory.GetItemCount(itemDef);
+                var itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.critAdd += baseCrit * (ConfigManager.General.initialCritStacking ? itemCount : 1f);
@@ -249,7 +249,7 @@ namespace MysticsItems.Items
         {
             if (!damageInfo.procChainMask.HasProc(ProcType.ChainLightning) && !damageInfo.rejected && attackerInfo.body && attackerInfo.inventory && victimInfo.body)
             {
-                var itemCount = attackerInfo.inventory.GetItemCount(itemDef);
+                var itemCount = attackerInfo.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0 && damageInfo.procCoefficient > 0f && damageInfo.crit)
                 {
                     var mark = MysticsItemsDeathCeremonyMark.GetForBody(victimInfo.body);

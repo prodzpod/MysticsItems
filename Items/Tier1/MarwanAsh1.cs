@@ -1,15 +1,11 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace MysticsItems.Items
 {
@@ -348,7 +344,7 @@ namespace MysticsItems.Items
 
             public static bool HasAnyAsh(Inventory inventory)
             {
-                return inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MarwanAsh1) > 0 || inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MarwanAsh2) > 0 || inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MarwanAsh3) > 0;
+                return inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MarwanAsh1) > 0 || inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MarwanAsh2) > 0 || inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MarwanAsh3) > 0;
             }
 
             public CharacterBody body;
@@ -378,14 +374,13 @@ namespace MysticsItems.Items
                     if (body.level >= upgradeLevel12) itemLevel = 2;
                     if (body.level >= upgradeLevel23) itemLevel = 3;
 
-                    var itemCount1 = body.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MarwanAsh1);
-                    var itemCount2 = body.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MarwanAsh2);
-                    var itemCount3 = body.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_MarwanAsh3);
+                    var itemCount1 = body.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MarwanAsh1);
+                    var itemCount2 = body.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MarwanAsh2);
+                    var itemCount3 = body.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_MarwanAsh3);
 
                     if (itemLevel == 2 && itemCount1 > 0)
                     {
-                        body.inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh1, itemCount1);
-                        body.inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh2, itemCount1);
+                        body.inventory.ReplaceItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh1.itemIndex, MysticsItemsContent.Items.MysticsItems_MarwanAsh2.itemIndex, itemCount1);
 
                         CharacterMasterNotificationQueue.PushItemTransformNotification(
                             body.master,
@@ -400,9 +395,8 @@ namespace MysticsItems.Items
                     }
                     if (itemLevel == 3 && (itemCount1 > 0 || itemCount2 > 0))
                     {
-                        body.inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh1, itemCount1);
-                        body.inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh2, itemCount2);
-                        body.inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh3, itemCount1 + itemCount2);
+                        body.inventory.ReplaceItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh1.itemIndex, MysticsItemsContent.Items.MysticsItems_MarwanAsh3.itemIndex, itemCount1);
+                        body.inventory.ReplaceItem(MysticsItemsContent.Items.MysticsItems_MarwanAsh2.itemIndex, MysticsItemsContent.Items.MysticsItems_MarwanAsh3.itemIndex, itemCount2);
 
                         if (itemCount1 > 0)
                         {

@@ -1,7 +1,6 @@
 using MysticsRisky2Utils;
 using RoR2;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 namespace MysticsItems

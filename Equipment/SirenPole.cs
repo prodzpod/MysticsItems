@@ -342,10 +342,10 @@ namespace MysticsItems.Equipment
                             CharacterMaster master = teamComponent.body.master;
                             if (master)
                             {
-                                int itemCount = master.inventory.GetItemCount(RoR2Content.Items.WardOnLevel);
+                                int itemCount = master.inventory.GetItemCountEffective(RoR2Content.Items.WardOnLevel);
                                 if (itemCount > 0)
                                 {
-                                    GameObject gameObject = Object.Instantiate<GameObject>(LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/WarbannerWard"), body.transform.position, Quaternion.identity);
+                                    GameObject gameObject = Instantiate(LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/WarbannerWard"), body.transform.position, Quaternion.identity);
                                     gameObject.GetComponent<TeamFilter>().teamIndex = TeamIndex.Player;
                                     gameObject.GetComponent<BuffWard>().Networkradius = 8f + 8f * (float)itemCount;
                                     NetworkServer.Spawn(gameObject);
@@ -385,7 +385,7 @@ namespace MysticsItems.Equipment
                         else
                         {
                             if (NetworkServer.active) NetworkServer.Destroy(gameObject);
-                            else Object.Destroy(gameObject);
+                            else Destroy(gameObject);
                         }
                     }
                 }

@@ -118,7 +118,7 @@ namespace MysticsItems.Items
                         Inventory inventory = body.inventory;
                         if (inventory)
                         {
-                            int itemCount = body.inventory.GetItemCount(itemDef);
+                            int itemCount = body.inventory.GetItemCountEffective(itemDef);
                             if (itemCount > 0)
                             {
                                 body.crit /= Mathf.Pow(2, itemCount);
@@ -144,7 +144,7 @@ namespace MysticsItems.Items
                         Inventory inventory = body.inventory;
                         if (inventory)
                         {
-                            int itemCount = body.inventory.GetItemCount(itemDef);
+                            int itemCount = body.inventory.GetItemCountEffective(itemDef);
                             if (itemCount > 0)
                             {
                                 currentCritMultiplier /= Mathf.Pow(2, itemCount);
@@ -160,7 +160,7 @@ namespace MysticsItems.Items
         {
             if (sender.inventory)
             {
-                var itemCount = sender.inventory.GetItemCount(itemDef);
+                var itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.critDamageMultAdd += critDamageIncrease.Value / 100f + critDamageIncreasePerStack.Value / 100f * (float)(itemCount - 1);
@@ -172,7 +172,7 @@ namespace MysticsItems.Items
         {
             if (!damageInfo.crit && attackerInfo.inventory)
             {
-                var itemCount = attackerInfo.inventory.GetItemCount(itemDef);
+                var itemCount = attackerInfo.inventory.GetItemCountEffective(itemDef);
                 if (attackerInfo.body && itemCount > 0)
                 {
                     if (halveNonCritDamageForBackstabbers && attackerInfo.body.bodyFlags.HasFlag(CharacterBody.BodyFlags.HasBackstabPassive))

@@ -1,10 +1,8 @@
 using UnityEngine;
 using MysticsRisky2Utils;
 using RoR2;
-using RoR2.Skills;
 using UnityEngine.Networking;
 using MysticsRisky2Utils.BaseAssetTypes;
-using RoR2.Navigation;
 
 namespace MysticsItems.CharacterBodies
 {

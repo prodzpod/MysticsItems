@@ -1,9 +1,5 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -103,7 +99,7 @@ namespace MysticsItems.Items
             var body = interactor.GetComponent<CharacterBody>();
             if (body && body.inventory)
             {
-                var itemCount = body.inventory.GetItemCount(itemDef);
+                var itemCount = body.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     body.AddBuff(MysticsItemsContent.Buffs.MysticsItems_GachaponBonus);
@@ -115,7 +111,7 @@ namespace MysticsItems.Items
         {
             if (sender.inventory)
             {
-                var itemCount = sender.inventory.GetItemCount(itemDef);
+                var itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.critAdd += passiveCritBonus + passiveCritBonusPerStack * (float)(itemCount - 1);

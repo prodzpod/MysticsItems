@@ -1,16 +1,11 @@
 using RoR2;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using System;
 using System.Linq;
-using System.Reflection;
 using System.Collections.Generic;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API.Networking.Interfaces;
-using R2API.Networking;
 using static MysticsItems.LegacyBalanceConfigManager;
 using UnityEngine.AddressableAssets;
 
@@ -175,11 +170,11 @@ namespace MysticsItems.Items
             if (NetworkServer.active)
             {
                 if (damageReport.attackerBody && damageReport.attackerBody.inventory) {
-                    var itemCount = damageReport.attackerBody.inventory.GetItemCount(itemDef);
+                    var itemCount = damageReport.attackerBody.inventory.GetItemCountEffective(itemDef);
                     if (itemCount > 0 && damageReport.victimIsElite)
                     {
-                        var radius = ElitePotion.radius + ElitePotion.radiusPerStack * (itemCount - 1);
-                        var duration = ElitePotion.duration + ElitePotion.durationPerStack * (itemCount - 1);
+                        var radius = ElitePotion.radius + radiusPerStack * (itemCount - 1);
+                        var duration = ElitePotion.duration + durationPerStack * (itemCount - 1);
                         var damageMult = 1f + 0.8f * (itemCount - 1);
 
                         foreach (var buffIndex in BuffCatalog.eliteBuffIndices.Where(x => damageReport.victimBody.HasBuff(x)))
@@ -211,7 +206,7 @@ namespace MysticsItems.Items
                                         if (spreadEffectInfo.debuff)
                                             hurtBox.healthComponent.body.AddTimedBuff(spreadEffectInfo.debuff, duration);
                                         if (spreadEffectInfo.dot != default(DotController.DotIndex) && spreadEffectInfo.dot != DotController.DotIndex.None)
-                                            DotController.InflictDot(hurtBox.healthComponent.gameObject, damageReport.attacker, spreadEffectInfo.dot, duration, 1f);
+                                            DotController.InflictDot(hurtBox.healthComponent.gameObject, damageReport.attacker, hurtBox, spreadEffectInfo.dot, duration, 1f);
                                     }
                                 }
 

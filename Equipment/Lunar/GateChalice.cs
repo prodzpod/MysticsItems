@@ -1,20 +1,11 @@
 using RoR2;
 using R2API;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.Rendering.PostProcessing;
-using R2API.Utils;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Reflection;
-using System.Collections.ObjectModel;
-using RoR2.UI;
 using MysticsRisky2Utils;
 using System.Linq;
 using System.Collections.Generic;
 using MysticsRisky2Utils.BaseAssetTypes;
-using static MysticsItems.LegacyBalanceConfigManager;
-using RoR2.Navigation;
 
 namespace MysticsItems.Equipment
 {
@@ -69,7 +60,7 @@ namespace MysticsItems.Equipment
         
         public override void OnPluginAwake()
         {
-            sceneExitControllerObject = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_GateChaliceSceneExitControllerObject", true);
+            sceneExitControllerObject = Utils.CreateBlankPrefab("MysticsItems_GateChaliceSceneExitControllerObject", true);
         }
 
         public override void OnLoad()
@@ -251,7 +242,7 @@ namespace MysticsItems.Equipment
                 {
                     if (pickupDisplay)
                     {
-                        pickupDisplay.SetPickupIndex(new PickupIndex((int)effectComponent.effectData.genericUInt), false);
+                        pickupDisplay.pickupState.pickupIndex = new PickupIndex((int)effectComponent.effectData.genericUInt);
                     }
                     if (rigidbody)
                     {
@@ -279,7 +270,7 @@ namespace MysticsItems.Equipment
                             name = "ShatterOrigin",
                             transform = pickupDisplay.modelObject.transform
                         };
-                        HGArrayUtilities.ArrayAppend(ref childLocator.transformPairs, ref transformPair);
+                        HG.ArrayUtils.ArrayAppend(ref childLocator.transformPairs, in transformPair);
 
                         TemporaryOverlay temporaryOverlay = pickupDisplay.modelObject.AddComponent<TemporaryOverlay>();
                         temporaryOverlay.duration = 0.5f;

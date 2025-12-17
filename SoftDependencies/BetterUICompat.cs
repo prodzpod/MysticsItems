@@ -20,7 +20,7 @@ namespace MysticsItems.SoftDependencies
                 var crit = statBody.crit;
                 if (crit >= 1f && statBody.inventory)
                 {
-                    var itemCount = statBody.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_ScratchTicket);
+                    var itemCount = statBody.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_ScratchTicket);
                     if (itemCount > 0) crit = Items.ScratchTicket.ApplyPercentBonus(itemCount, crit);
                 }
                 float LuckCalc(float chance, float luck)
@@ -720,7 +720,7 @@ namespace MysticsItems.SoftDependencies
             public static float SpeedGivesDamageBonusModifier(CharacterMaster master, BetterUI.ItemStats.ItemModifier itemModifier)
             {
                 if (master.hasBody)
-                    return Items.SpeedGivesDamage.CalculateDamageBonus(master.GetBody(), master.inventory.GetItemCount(itemModifier.itemDef)) * 100f;
+                    return Items.SpeedGivesDamage.CalculateDamageBonus(master.GetBody(), master.inventory.GetItemCountEffective(itemModifier.itemDef)) * 100f;
                 return 0f;
             }
         }

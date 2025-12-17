@@ -45,7 +45,7 @@ namespace MysticsItems.Items
                 prefab = debuffedVFX,
                 condition = (x) => {
                     Inventory inventory = x.inventory;
-                    if (inventory) return inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_RiftLensDebuff) > 0;
+                    if (inventory) return inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_RiftLensDebuff) > 0;
                     return false;
                 },
                 radius = CustomTempVFXManagement.DefaultRadiusCall

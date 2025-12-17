@@ -1,13 +1,8 @@
 using RoR2;
 using UnityEngine;
-using UnityEngine.Networking;
 using System.Linq;
-using System.Collections.Generic;
-using R2API.Networking.Interfaces;
-using R2API.Networking;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
@@ -91,9 +86,8 @@ namespace MysticsItems.Items
                     Inventory inventory = characterMaster.inventory;
                     if (inventory)
                     {
-                        int count = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpenConsumed);
-                        inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpenConsumed, count);
-                        inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen, count);
+                        int count = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpenConsumed);
+                        inventory.ReplaceItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpenConsumed.itemIndex, MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen.itemIndex, count);
                     }
                 }
             };
@@ -109,7 +103,7 @@ namespace MysticsItems.Items
         {
             orig(context, moneyCost);
             CharacterMaster activatorMaster = context.activatorMaster;
-            if (activatorMaster && activatorMaster.hasBody && activatorMaster.inventory && activatorMaster.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen) > 0 && context.purchasedObject)
+            if (activatorMaster && activatorMaster.hasBody && activatorMaster.inventory && activatorMaster.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen) > 0 && context.purchasedObject)
             {
                 ShopTerminalBehavior shopTerminalBehavior = context.purchasedObject.GetComponent<ShopTerminalBehavior>();
                 if (shopTerminalBehavior && shopTerminalBehavior.serverMultiShopController)
@@ -123,10 +117,9 @@ namespace MysticsItems.Items
                     if (remainingTerminals > 1)
                     {
                         shopTerminalBehavior.serverMultiShopController.SetCloseOnTerminalPurchase(context.purchasedObject.GetComponent<PurchaseInteraction>(), false);
-                        activatorMaster.inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen);
-                        activatorMaster.inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpenConsumed);
+                        activatorMaster.inventory.ReplaceItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen.itemIndex, MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpenConsumed.itemIndex);
 
-                        RoR2.Audio.PointSoundManager.EmitSoundServer(KeepShopTerminalOpen.sfx.index, shopTerminalBehavior.transform.position);
+                        RoR2.Audio.PointSoundManager.EmitSoundServer(sfx.index, shopTerminalBehavior.transform.position);
 
                         shopTerminalBehavior.serverMultiShopController.Networkcost = (int)(shopTerminalBehavior.serverMultiShopController.Networkcost * (1f - discount / 100f));
                         foreach (var terminal in shopTerminalBehavior.serverMultiShopController.terminalGameObjects)
@@ -186,7 +179,7 @@ namespace MysticsItems.Items
                     Inventory inventory = characterBody.inventory;
                     if (inventory)
                     {
-                        int itemCount = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen);
+                        int itemCount = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen);
                         if (itemCount > 0 && Reopen())
                         {
                             inventory.RemoveItem(MysticsItemsContent.Items.MysticsItems_KeepShopTerminalOpen);

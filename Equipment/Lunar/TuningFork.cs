@@ -1,13 +1,7 @@
 using RoR2;
 using R2API;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.Rendering.PostProcessing;
-using R2API.Utils;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Reflection;
-using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using static MysticsItems.LegacyBalanceConfigManager;
 using System.Collections.Generic;
@@ -143,7 +137,7 @@ namespace MysticsItems.Equipment
             public void Start()
             {
                 meshRenderer = GetComponent<MeshRenderer>();
-                material = Object.Instantiate(meshRenderer.sharedMaterial);
+                material = Instantiate(meshRenderer.sharedMaterial);
                 meshRenderer.material = material;
                 effectComponent = transform.parent.gameObject.GetComponent<EffectComponent>();
             }
@@ -185,7 +179,7 @@ namespace MysticsItems.Equipment
 
             public void OnDestroy()
             {
-                Object.Destroy(material);
+                Destroy(material);
             }
         }
 

@@ -1,12 +1,7 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
 using System.Linq;
 using System.Collections.Generic;
@@ -138,7 +133,7 @@ namespace MysticsItems.Items
             }
         }
 
-        private void DotController_OnDotStackAddedServer(On.RoR2.DotController.orig_OnDotStackAddedServer orig, DotController self, object dotStack)
+        private void DotController_OnDotStackAddedServer(On.RoR2.DotController.orig_OnDotStackAddedServer orig, DotController self, DotController.DotStack dotStack)
         {
             orig(self, dotStack);
             var _dotStack = (dotStack as DotController.DotStack);
@@ -173,7 +168,7 @@ namespace MysticsItems.Items
             Inventory inventory = body.inventory;
             if (inventory)
             {
-                int itemCount = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_Cookie);
+                int itemCount = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_Cookie);
                 if (itemCount > 0)
                 {
                     if (isDebuff)

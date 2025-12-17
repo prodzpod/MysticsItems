@@ -2,17 +2,10 @@ using RoR2;
 using RoR2.Hologram;
 using RoR2.Audio;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using R2API.Networking;
 using R2API.Networking.Interfaces;
-using System.Collections.ObjectModel;
-using System.Text;
-using TMPro;
-using System.Collections.Generic;
 using ThreeEyedGames;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
@@ -81,7 +74,7 @@ namespace MysticsItems.Items
 
         public override void OnPluginAwake()
         {
-            zonePrefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_TreasureMapZone", true);
+            zonePrefab = Utils.CreateBlankPrefab("MysticsItems_TreasureMapZone", true);
 
             NetworkingAPI.RegisterMessageType<MysticsItemsTreasureMapZone.SyncZoneShouldBeActive>();
             NetworkingAPI.RegisterMessageType<MysticsItemsTreasureMapZone.RequestZoneShouldBeActive>();
@@ -125,8 +118,8 @@ namespace MysticsItems.Items
                 AddDisplayRule("RailgunnerBody", "GunRoot", new Vector3(0.00726F, -0.15201F, 0.07672F), new Vector3(270F, 180F, 0F), new Vector3(0.05025F, 0.05025F, 0.05025F));
                 AddDisplayRule("VoidSurvivorBody", "ForeArmL", new Vector3(0.06352F, 0.24419F, 0.00664F), new Vector3(69.26795F, 34.44471F, 302.5876F), new Vector3(0.05926F, 0.05926F, 0.05926F));
             };
-            
-            MysticsRisky2Utils.Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Treasure Map/TreasureMapZone.prefab"), zonePrefab);
+
+            Utils.CopyChildren(Main.AssetBundle.LoadAsset<GameObject>("Assets/Items/Treasure Map/TreasureMapZone.prefab"), zonePrefab);
             HoldoutZoneController holdoutZone = zonePrefab.AddComponent<HoldoutZoneController>();
             holdoutZone.baseRadius = radius;
             holdoutZone.baseChargeDuration = unearthTime;
@@ -269,7 +262,7 @@ namespace MysticsItems.Items
 
             public Xoroshiro128Plus rng;
             public PickupDropTable dropTable;
-            public PickupIndex dropPickup = PickupIndex.none;
+            public UniquePickup dropPickup = UniquePickup.none;
             public Transform dropTransform;
             public float dropUpVelocityStrength = 20f;
             public float dropForwardVelocityStrength = 2f;
@@ -284,7 +277,7 @@ namespace MysticsItems.Items
                 {
                     ShouldBeActive = false;
                     rng = new Xoroshiro128Plus(Run.instance.treasureRng.nextUlong);
-                    if (dropTable) dropPickup = dropTable.GenerateDrop(rng);
+                    if (dropTable) dropPickup = dropTable.GeneratePickup(rng);
                 }
                 else
                 {
@@ -320,7 +313,7 @@ namespace MysticsItems.Items
 
                 if (holdoutZoneController && holdoutZoneController.radiusIndicator) holdoutZoneController.radiusIndicator.transform.localScale = Vector3.zero;
 
-                Object.Destroy(gameObject);
+                Destroy(gameObject);
             }
 
             public static void ToggleSeaBearCircle(bool setEnabled)
@@ -362,7 +355,7 @@ namespace MysticsItems.Items
 
             public GameObject GetHologramContentPrefab()
             {
-                return MysticsRisky2Utils.PlainHologram.hologramContentPrefab;
+                return PlainHologram.hologramContentPrefab;
             }
 
             public void UpdateHologramContent(GameObject hologramContentObject, Transform viewerBody)

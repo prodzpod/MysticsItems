@@ -1,19 +1,19 @@
 {
   "name": "RealerMysticsItems",
-  "version_number": "2.1.22",
+  "version_number": "2.1.25",
   "website_url": "https://github.com/prodzpod/MysticsItems",
   "description": "Adds 50 new items!",
   "dependencies": [
-    "bbepis-BepInExPack-5.4.1905",
-    "RiskofThunder-R2API_Core-5.0.6",
-    "RiskofThunder-R2API_DamageType-1.0.3",
-    "RiskofThunder-R2API_Dot-1.0.0",
-    "RiskofThunder-R2API_Language-1.0.0",
-    "RiskofThunder-R2API_Networking-1.0.2",
-    "RiskofThunder-R2API_Prefab-1.0.1",
-    "RiskofThunder-R2API_RecalculateStats-1.2.0",
-    "RiskofThunder-R2API_Sound-1.0.0",
-    "RiskofThunder-HookGenPatcher-1.2.3",
-    "prodzpod-RealerMysticsRisky2Utils-2.0.16"
+    "bbepis-BepInExPack-5.4.2121",
+    "RiskofThunder-R2API_Core-5.3.0",
+    "RiskofThunder-R2API_DamageType-1.1.7",
+    "RiskofThunder-R2API_Dot-1.1.2",
+    "RiskofThunder-R2API_Language-1.1.0",
+    "RiskofThunder-R2API_Networking-1.0.4",
+    "RiskofThunder-R2API_Prefab-1.1.1",
+    "RiskofThunder-R2API_RecalculateStats-1.6.5",
+    "RiskofThunder-R2API_Sound-1.0.3",
+    "RiskofThunder-HookGenPatcher-1.2.9",
+    "prodzpod-RealerMysticsRisky2Utils-2.0.23"
   ]
 }

@@ -1,14 +1,9 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using System;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
-using BepInEx.Configuration;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace MysticsItems.Items
 {
@@ -110,7 +105,7 @@ namespace MysticsItems.Items
             orig(self);
             if (self.inventory)
             {
-                int itemCount = self.inventory.GetItemCount(itemDef);
+                int itemCount = self.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     self.maxJumpCount += 1;
@@ -127,7 +122,7 @@ namespace MysticsItems.Items
                 var inventory = self.characterBody.inventory;
                 if (skillLocator && inventory)
                 {
-                    var itemCount = inventory.GetItemCount(itemDef);
+                    var itemCount = inventory.GetItemCountEffective(itemDef);
                     if (itemCount > 0)
                     {
                         if (skillLocator.primaryBonusStockSkill == self ||
@@ -148,7 +143,7 @@ namespace MysticsItems.Items
             var result = orig(self, slot);
             if (slot == DeployableSlot.EngiTurret && increaseEngiTurretLimit)
             {
-                var itemCount = self.inventory.GetItemCount(itemDef);
+                var itemCount = self.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0) result += charges + chargesPerStack * (itemCount - 1);
             }
             return result;
@@ -157,7 +152,7 @@ namespace MysticsItems.Items
         /*
         private void GenericCharacterMain_PerformInputs(On.EntityStates.GenericCharacterMain.orig_PerformInputs orig, EntityStates.GenericCharacterMain self)
         {
-            var hasThisItem = GeneralConfigManager.backpackEnableSkillFixes.Value && self.characterBody && self.characterBody.inventory && self.characterBody.inventory.GetItemCount(itemDef) > 0;
+            var hasThisItem = GeneralConfigManager.backpackEnableSkillFixes.Value && self.characterBody && self.characterBody.inventory && self.characterBody.inventory.GetItemCountEffective(itemDef) > 0;
             if (hasThisItem)
             {
                 for (var i = 0; i < skillDefsToFix.Count; i++)
@@ -212,10 +207,10 @@ namespace MysticsItems.Items
         {
             if (sender.inventory)
             {
-                int itemCount = sender.inventory.GetItemCount(itemDef);
+                int itemCount = sender.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
-                    args.cooldownMultAdd -= cdr / 100f;
+                    args.allSkills.cooldownMultAdd -= cdr / 100f;
 
                     var skills = new GenericSkill[]
                     {

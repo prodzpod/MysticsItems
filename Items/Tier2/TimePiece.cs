@@ -2,10 +2,7 @@ using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using System.Collections.Generic;
-using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
@@ -114,7 +111,7 @@ namespace MysticsItems.Items
         {
             orig(self);
             if (NetworkServer.active)
-                self.AddItemBehavior<MysticsItemsTimePieceBehaviour>(self.inventory.GetItemCount(itemDef));
+                self.AddItemBehavior<MysticsItemsTimePieceBehaviour>(self.inventory.GetItemCountEffective(itemDef));
         }
 
         public class MysticsItemsTimePieceAttachmentBehaviour : MonoBehaviour
@@ -156,7 +153,7 @@ namespace MysticsItems.Items
             {
                 if (inventory)
                 {
-                    var itemCount = inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_TimePiece);
+                    var itemCount = inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_TimePiece);
                     
                     transform.localScale = Vector3.one * radius;
                     if (NetworkServer.active)

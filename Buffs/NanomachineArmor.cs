@@ -49,7 +49,7 @@ namespace MysticsItems.Buffs
             if (sender.HasBuff(buffDef))
             {
                 var itemCount = 0;
-                if (sender.inventory) itemCount = sender.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_Nanomachines);
+                if (sender.inventory) itemCount = sender.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_Nanomachines);
                 args.armorAdd += armor + armorPerStack * (float)(itemCount - 1);
             }
         }

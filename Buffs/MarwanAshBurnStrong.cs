@@ -2,7 +2,6 @@ using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 using RoR2;
-using System.Linq;
 using UnityEngine;
 
 namespace MysticsItems.Buffs

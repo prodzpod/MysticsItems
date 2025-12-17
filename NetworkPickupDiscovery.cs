@@ -1,11 +1,8 @@
 using R2API.Networking.Interfaces;
 using RoR2;
-using RoR2.UI;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
 using R2API.Networking;
-using System.Collections.Generic;
 
 namespace MysticsItems
 {

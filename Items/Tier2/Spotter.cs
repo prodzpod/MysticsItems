@@ -1,19 +1,14 @@
 using RoR2;
 using RoR2.Networking;
 using RoR2.Audio;
-using EntityStates;
 using R2API;
-using R2API.Utils;
 using R2API.Networking;
 using R2API.Networking.Interfaces;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
 using System.Collections.Generic;
 using TMPro;
-using System.Collections.ObjectModel;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using static MysticsItems.LegacyBalanceConfigManager;
@@ -57,9 +52,9 @@ namespace MysticsItems.Items
 
         public override void OnPluginAwake()
         {
-            enemyFollowerPrefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_SpotterController", true);
+            enemyFollowerPrefab = Utils.CreateBlankPrefab("MysticsItems_SpotterController", true);
             enemyFollowerPrefab.AddComponent<CharacterNetworkTransform>();
-            unlockInteractablePrefab = MysticsRisky2Utils.Utils.CreateBlankPrefab("MysticsItems_SpotterUnlockInteractable", true);
+            unlockInteractablePrefab = Utils.CreateBlankPrefab("MysticsItems_SpotterUnlockInteractable", true);
 
             NetworkingAPI.RegisterMessageType<MysticsItemsSpotterController.SyncClearTarget>();
             NetworkingAPI.RegisterMessageType<MysticsItemsSpotterController.SyncSetTarget>();
@@ -82,7 +77,7 @@ namespace MysticsItems.Items
             HopooShaderToMaterial.Standard.Gloss(mat, 0.2f, 1f);
             HopooShaderToMaterial.Standard.Emission(mat, 1f);
             itemDisplayPrefab = PrepareItemDisplayModel(PrefabAPI.InstantiateClone(itemDef.pickupModelPrefab, itemDef.pickupModelPrefab.name + "Display", false));
-            MysticsRisky2Utils.Utils.CopyChildren(itemDef.pickupModelPrefab, unlockInteractablePrefab);
+            Utils.CopyChildren(itemDef.pickupModelPrefab, unlockInteractablePrefab);
 
             ModelPanelParameters modelPanelParameters = itemDef.pickupModelPrefab.GetComponent<ModelPanelParameters>();
             modelPanelParameters.minDistance = 6f;
@@ -149,7 +144,7 @@ namespace MysticsItems.Items
                 orig(self);
                 self.onInventoryChanged += delegate ()
                 {
-                    if (NetworkServer.active) self.AddItemBehavior<MysticsItemsSpotterBehaviour>(self.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_Spotter));
+                    if (NetworkServer.active) self.AddItemBehavior<MysticsItemsSpotterBehaviour>(self.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_Spotter));
                 };
             };
 
@@ -184,11 +179,14 @@ namespace MysticsItems.Items
                         Inventory inventory = body.inventory;
                         if (inventory)
                         {
-                            inventory.GiveItem(MysticsItemsContent.Items.MysticsItems_Spotter);
+                            inventory.GiveItemPermanent(MysticsItemsContent.Items.MysticsItems_Spotter);
                             GenericPickupController.PickupMessage msg = new GenericPickupController.PickupMessage
                             {
                                 masterGameObject = body.master.gameObject,
-                                pickupIndex = PickupCatalog.FindPickupIndex(MysticsItemsContent.Items.MysticsItems_Spotter.itemIndex),
+                                pickupState = new UniquePickup() 
+                                { 
+                                    pickupIndex = PickupCatalog.FindPickupIndex(MysticsItemsContent.Items.MysticsItems_Spotter.itemIndex)
+                                },
                                 pickupQuantity = 1u
                             };
                             NetworkServer.SendByChannelToAll(57, msg, QosChannelIndex.chat.intVal);
@@ -364,7 +362,7 @@ namespace MysticsItems.Items
                             {
                                 Renderer renderer = rendererInfo.renderer;
                                 renderer.GetPropertyBlock(materialPropertyBlock);
-                                materialPropertyBlock.SetFloat("_Fade", target ? 1f : 1f / body.inventory.GetItemCount(MysticsItemsContent.Items.MysticsItems_Spotter));
+                                materialPropertyBlock.SetFloat("_Fade", target ? 1f : 1f / body.inventory.GetItemCountEffective(MysticsItemsContent.Items.MysticsItems_Spotter));
                                 renderer.SetPropertyBlock(materialPropertyBlock);
                             }
                         }
@@ -385,7 +383,7 @@ namespace MysticsItems.Items
                 target = null;
                 while (highlights.Count > 0)
                 {
-                    if (highlights[0] && highlights[0].gameObject) Object.Destroy(highlights[0].gameObject);
+                    if (highlights[0] && highlights[0].gameObject) Destroy(highlights[0].gameObject);
                     highlights.RemoveAt(0);
                 }
             }
@@ -426,7 +424,7 @@ namespace MysticsItems.Items
                 {
                     while (enemyFollowers.Count < stack)
                     {
-                        GameObject enemyFollower = Object.Instantiate(enemyFollowerPrefab, body.corePosition, Quaternion.identity);
+                        GameObject enemyFollower = Instantiate(enemyFollowerPrefab, body.corePosition, Quaternion.identity);
                         enemyFollower.GetComponent<GenericOwnership>().ownerObject = gameObject;
                         NetworkServer.Spawn(enemyFollower);
                         enemyFollowers.Add(enemyFollower.GetComponent<MysticsItemsSpotterController>());
@@ -435,7 +433,7 @@ namespace MysticsItems.Items
                     {
                         MysticsItemsSpotterController enemyFollower = enemyFollowers.Last();
                         NetworkServer.UnSpawn(enemyFollower.gameObject);
-                        Object.Destroy(enemyFollower.gameObject);
+                        Destroy(enemyFollower.gameObject);
                         enemyFollowers.Remove(enemyFollower);
                     }
                 }
@@ -510,7 +508,7 @@ namespace MysticsItems.Items
                     {
                         enemyFollowers[i].ClearTarget();
                         if (NetworkServer.active) NetworkServer.UnSpawn(enemyFollowers[i].gameObject);
-                        Object.Destroy(enemyFollowers[i].gameObject);
+                        Destroy(enemyFollowers[i].gameObject);
                     }
                 }
             }
@@ -540,7 +538,7 @@ namespace MysticsItems.Items
                 {
                     if (TeamComponent.GetObjectTeam(cameraRigController.targetBody.gameObject) == teamIndex)
                     {
-                        MysticsItemsSpotterHighlight component = Object.Instantiate<GameObject>(highlightPrefab).GetComponent<MysticsItemsSpotterHighlight>();
+                        MysticsItemsSpotterHighlight component = Instantiate(highlightPrefab).GetComponent<MysticsItemsSpotterHighlight>();
                         component.targetBody = targetBody;
                         component.canvas.worldCamera = cameraRigController.uiCam;
                         component.uiCam = cameraRigController.uiCam;
@@ -578,7 +576,7 @@ namespace MysticsItems.Items
             {
                 if (!targetBody)
                 {
-                    Object.Destroy(gameObject);
+                    Destroy(gameObject);
                     return;
                 }
                 Vector3 screenPoint = sceneCam.WorldToScreenPoint(targetBody.corePosition);

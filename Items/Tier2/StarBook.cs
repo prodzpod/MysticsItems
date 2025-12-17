@@ -1,14 +1,9 @@
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
-using Mono.Cecil.Cil;
-using MonoMod.Cil;
-using System.Collections.Generic;
 using RoR2.Audio;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
 using RoR2.Projectile;
 using UnityEngine.AddressableAssets;
@@ -272,12 +267,13 @@ namespace MysticsItems.Items
                     var body = other.GetComponent<CharacterBody>();
                     if (body)
                     {
+                        body.OnPickup(CharacterBody.PickupClass.Minor);
                         body.AddTimedBuff(buffDef.buffIndex, buffDuration);
                         EffectManager.SpawnEffect(pickupEffect, new EffectData
                         {
                             origin = other.transform.position
                         }, true);
-                        MysticsItems.OtherModCompat.ExplosivePickups_TryExplode(body);
+                        OtherModCompat.ExplosivePickups_TryExplode(body);
                         Destroy(baseObject);
                     }
                 }
@@ -322,7 +318,7 @@ namespace MysticsItems.Items
         {
             if (!damageInfo.rejected && damageInfo.procCoefficient > 0f && !damageInfo.procChainMask.HasProc(ProcType.LoaderLightning) && attackerInfo.inventory)
             {
-                var itemCount = attackerInfo.inventory.GetItemCount(itemDef);
+                var itemCount = attackerInfo.inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0 && Util.CheckRoll(chance * damageInfo.procCoefficient, attackerInfo.master))
                 {
                     var fireProjectileInfo = new FireProjectileInfo

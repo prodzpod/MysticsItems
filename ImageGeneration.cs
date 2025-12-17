@@ -1,9 +1,7 @@
-using R2API.Utils;
 using RoR2;
 using RoR2.UI;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using R2API;

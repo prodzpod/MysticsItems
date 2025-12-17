@@ -1,14 +1,11 @@
 using RoR2;
-using R2API.Utils;
 using UnityEngine;
-using UnityEngine.Networking;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
 using R2API;
 using static MysticsItems.LegacyBalanceConfigManager;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace MysticsItems.Items
@@ -153,7 +150,7 @@ namespace MysticsItems.Items
             Inventory inventory = sender.inventory;
             if (inventory)
             {
-                int itemCount = inventory.GetItemCount(itemDef);
+                int itemCount = inventory.GetItemCountEffective(itemDef);
                 if (itemCount > 0)
                 {
                     args.moveSpeedMultAdd += (moveSpeed + moveSpeedPerStack * (float)(itemCount - 1)) / 100f;
@@ -173,7 +170,7 @@ namespace MysticsItems.Items
                 var inventory = body.inventory;
                 if (inventory)
                 {
-                    _itemCount = inventory.GetItemCount(itemDef);
+                    _itemCount = inventory.GetItemCountEffective(itemDef);
                 }
             });
 

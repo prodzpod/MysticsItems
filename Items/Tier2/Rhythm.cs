@@ -1,11 +1,8 @@
 using RoR2;
 using R2API;
-using R2API.Utils;
 using UnityEngine;
 using UnityEngine.Networking;
-using System;
 using System.Linq;
-using System.Reflection;
 using System.Collections.Generic;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
@@ -13,7 +10,6 @@ using R2API.Networking.Interfaces;
 using R2API.Networking;
 using RoR2.UI;
 using TMPro;
-using UnityEngine.UI;
 using static MysticsItems.LegacyBalanceConfigManager;
 
 namespace MysticsItems.Items
@@ -154,7 +150,7 @@ namespace MysticsItems.Items
 
             MusicBPMHelper.Init();
 
-            R2API.RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
+            RecalculateStatsAPI.GetStatCoefficients += RecalculateStatsAPI_GetStatCoefficients;
         }
 
         private void RecalculateStatsAPI_GetStatCoefficients(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)
@@ -241,7 +237,7 @@ namespace MysticsItems.Items
         private void CharacterBody_OnInventoryChanged(On.RoR2.CharacterBody.orig_OnInventoryChanged orig, CharacterBody self)
         {
             orig(self);
-            self.AddItemBehavior<MysticsItemsRhythmBehaviour>(self.inventory.GetItemCount(itemDef));
+            self.AddItemBehavior<MysticsItemsRhythmBehaviour>(self.inventory.GetItemCountEffective(itemDef));
         }
 
         private void CharacterBody_onBodyStartGlobal(CharacterBody characterBody)
@@ -543,7 +539,7 @@ namespace MysticsItems.Items
                 var isOnBeat = IsOnBeat();
                 if (isOnBeat && beatNotPressedYet)
                 {
-                    critBonus += Rhythm.critBonus + Rhythm.critBonusPerStack * (float)(stack - 1);
+                    critBonus += Rhythm.critBonus + critBonusPerStack * (float)(stack - 1);
                     beatsSinceLastHit = 0;
                     body.statsDirty = true;
                     beatNotPressedYet = false;
@@ -553,7 +549,7 @@ namespace MysticsItems.Items
                 }
                 if (!isOnBeat && critLossEnabled)
                 {
-                    critBonus -= Rhythm.critBonus + Rhythm.critBonusPerStack * (float)(stack - 1);
+                    critBonus -= Rhythm.critBonus + critBonusPerStack * (float)(stack - 1);
                     body.statsDirty = true;
                     foreach (var instance in MysticsItemsRhythmHUD.instancesList) if (instance.rhythmBehaviour == this)
                             instance.UpdateText();

@@ -2,11 +2,10 @@ using RoR2;
 using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Linq;
 using MysticsRisky2Utils;
 using MysticsRisky2Utils.BaseAssetTypes;
-using RoR2.Audio;
 using static MysticsItems.LegacyBalanceConfigManager;
+using MonoMod.RuntimeDetour;
 
 namespace MysticsItems.Items
 {
@@ -88,7 +87,22 @@ namespace MysticsItems.Items
 
             MysticsItemsContent.Resources.effectPrefabs.Add(visualEffect);
 
-            On.RoR2.Inventory.GiveItem_ItemIndex_int += (orig, self, itemIndex, count) =>
+            On.RoR2.Inventory.GiveItemPermanent_ItemIndex_int += (orig, self, itemIndex, count) =>
+            {
+                hook(self, itemIndex, count);
+                orig(self, itemIndex, count);
+            };
+            On.RoR2.Inventory.GiveItemTemp += (orig, self, itemIndex, count) =>
+            {
+                hook(self, itemIndex, (int)count);
+                orig(self, itemIndex, count);
+            };
+            On.RoR2.Inventory.GiveItemChanneled += (orig, self, itemIndex, count) =>
+            {
+                hook(self, itemIndex, count);
+                orig(self, itemIndex, count);
+            };
+            void hook(Inventory self, ItemIndex itemIndex, int count)
             {
                 if (NetworkServer.active)
                 {
@@ -96,11 +110,11 @@ namespace MysticsItems.Items
                     if (master)
                     {
                         var body = master.GetBody();
-                        if (body && self.GetItemCount(itemDef) > 0)
+                        if (body && self.GetItemCountEffective(itemDef) > 0)
                         {
                             for (int i = 0; i < count * GetBuffCountFromTier(ItemCatalog.GetItemDef(itemIndex).tier); i++)
                             {
-                                if (body.GetBuffCount(MysticsItemsContent.Buffs.MysticsItems_CoffeeBoost) < (maxBuffs + maxBuffsPerStack * (self.GetItemCount(itemDef) - 1)))
+                                if (body.GetBuffCount(MysticsItemsContent.Buffs.MysticsItems_CoffeeBoost) < (maxBuffs + maxBuffsPerStack * (self.GetItemCountEffective(itemDef) - 1)))
                                 {
                                     body.AddBuff(MysticsItemsContent.Buffs.MysticsItems_CoffeeBoost);
                                 }
@@ -109,8 +123,7 @@ namespace MysticsItems.Items
                         }
                     }
                 }
-                orig(self, itemIndex, count);
-            };
+            }
 
             On.RoR2.Language.GetLocalizedStringByToken += Language_GetLocalizedStringByToken;
         }

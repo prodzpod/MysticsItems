@@ -1,3 +1,11 @@
+#### 2.1.25:
+* manuscript and expresso works
+* starbook and explosive pickups work for collecters whatever thing that was
+#### 2.1.24:
+* permanent versions of temporary possible items actually consumes correctly
+#### 2.1.23:
+* made to work with AC
+* added temporary item support
 #### 2.1.22:
 * fun binary break on teleporterhelper (gate chalice)
 #### 2.1.21:
